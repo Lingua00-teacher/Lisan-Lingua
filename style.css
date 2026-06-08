@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +14,7 @@ body {
   line-height: 1.6;
 }
 
+/* الهيدر مع انيميشن السكرول */
 .header {
   background: white;
   padding: 15px;
@@ -19,12 +22,23 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .logo { 
   font-size: 28px; 
   font-weight: bold; 
   color: #2563EB; 
+  transition: 0.3s;
+}
+
+.header.scrolled .logo {
+  font-size: 24px;
 }
 
 .banner {
@@ -107,12 +121,19 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
   width: 300px; 
   text-align: center;
-  transition: 0.4s;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.4s;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(37,99,235,0.15);
+  box-shadow: 0 12px 30px rgba(22,163,74,0.15);
 }
 
 .card h3 {
@@ -143,6 +164,12 @@ body {
   padding: 25px;
   opacity: 0;
   transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.feature.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .feature .icon {
@@ -174,10 +201,20 @@ body {
   margin-top: 8px;
 }
 
-/* للموبايل */
+/* للموبايل + زر واتساب ثابت */
 @media (max-width: 768px) {
   .banner h1 { font-size: 28px; }
   .banner p { font-size: 18px; }
+  .banner { padding-bottom: 120px; }
   .section h2 { font-size: 26px; }
   .card { width: 100%; max-width: 340px; }
+  
+  .btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 99;
+    box-shadow: 0 8px 20px rgba(22,163,74,0.4);
+  }
 }
