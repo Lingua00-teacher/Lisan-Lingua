@@ -14,6 +14,7 @@ body {
   line-height: 1.6;
 }
 
+/* الهيدر مع السوشيال */
 .header {
   background: white;
   padding: 15px;
@@ -29,6 +30,15 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .logo { 
   font-size: 26px; 
   font-weight: bold; 
@@ -40,6 +50,35 @@ body {
   font-size: 22px;
 }
 
+.social-top {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.social-btn.fb {
+  background: #1877F2;
+}
+
+.social-btn.insta {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* البانر */
 .banner {
   padding: 80px 20px;
   background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
@@ -63,6 +102,14 @@ body {
   font-weight: 500;
 }
 
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
 .btn {
   background: #16A34A;
   color: white;
@@ -83,6 +130,25 @@ body {
   box-shadow: 0 5px 15px rgba(22,163,74,0.3);
 }
 
+.btn-outline {
+  background: transparent;
+  color: #2563EB;
+  padding: 15px 30px;
+  border: 2px solid #2563EB;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: #2563EB;
+  color: white;
+  transform: translateY(-2px);
+}
+
 .btn-small {
   background: #2563EB;
   color: white;
@@ -101,6 +167,7 @@ body {
   transform: translateY(-2px);
 }
 
+/* الاقسام */
 .section {
   padding: 60px 20px;
 }
@@ -217,6 +284,7 @@ body {
   margin-top: 20px;
 }
 
+/* الفوتر */
 .footer {
   background: #1e293b;
   color: white;
@@ -251,12 +319,32 @@ body {
   margin-top: 8px;
 }
 
+/* الجوال */
 @media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .social-top {
+    width: 100%;
+    justify-content: center;
+  }
+  
   .banner h1 { font-size: 28px; }
   .banner p { font-size: 18px; }
   .banner { padding-bottom: 120px; }
   .section h2 { font-size: 26px; }
   .card { width: 100%; max-width: 340px; }
+  
+  .btn-group {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  
+  .btn, .btn-outline {
+    width: 100%;
+  }
   
   .btn {
     position: fixed;
