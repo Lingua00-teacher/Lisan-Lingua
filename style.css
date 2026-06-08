@@ -17,8 +17,9 @@ body {
 
 /* الهيدر */
 .header {
-  background: white;
-  padding: 15px;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/london.jpg') center/cover;
+  padding: 60px 20px;
+  color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
