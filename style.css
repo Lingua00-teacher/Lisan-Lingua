@@ -12,9 +12,10 @@ body {
   color: #1e293b;
   text-align: center;
   line-height: 1.6;
+  transition: 0.3s;
 }
 
-/* الهيدر مع السوشيال */
+/* الهيدر */
 .header {
   background: white;
   padding: 15px;
@@ -50,6 +51,12 @@ body {
   font-size: 22px;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .social-top {
   display: flex;
   gap: 10px;
@@ -65,18 +72,54 @@ body {
   transition: 0.3s;
 }
 
-.social-btn.fb {
-  background: #1877F2;
+.social-btn.fb { background: #1877F2; }
+.social-btn.insta { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); }
+.social-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+
+/* القائمة المنسدلة */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.social-btn.insta {
-  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+.dropbtn {
+  background: #2563EB;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+.dropbtn:hover { background: #1d4ed8; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1;
+  margin-top: 5px;
 }
+
+.dropdown-content a {
+  color: #1e293b;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+  text-align: right;
+  transition: 0.2s;
+}
+
+.dropdown-content a:hover { background-color: #f1f5f9; }
+.dropdown:hover .dropdown-content { display: block; }
 
 /* البانر */
 .banner {
@@ -275,6 +318,7 @@ body {
 .about-list {
   font-size: 17px; 
   line-height: 2;
+  list-style: none;
 }
 
 .about-goal {
@@ -319,16 +363,51 @@ body {
   margin-top: 8px;
 }
 
-/* الجوال - الزر اصغر شوي */
+/* الوضع الليلي */
+body.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark .header,
+body.dark .card,
+body.dark .about-box,
+body.dark .features,
+body.dark .dropdown-content {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+body.dark .section h2,
+body.dark .card h3,
+body.dark .banner h1,
+body.dark .logo {
+  color: #60a5fa;
+}
+
+body.dark .banner {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+body.dark .dropdown-content a {
+  color: #e2e8f0;
+}
+
+body.dark .dropdown-content a:hover {
+  background-color: #334155;
+}
+
+/* الجوال */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
     gap: 10px;
   }
   
-  .social-top {
+  .header-controls {
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
   }
   
   .banner h1 { font-size: 28px; }
@@ -360,5 +439,10 @@ body {
   .about-box {
     padding: 25px 20px;
     margin: 40px 20px 0;
+    text-align: center;
+  }
+  
+  .about-list {
+    text-align: center;
   }
 }
