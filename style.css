@@ -14,7 +14,6 @@ body {
   line-height: 1.6;
 }
 
-/* الهيدر مع انيميشن السكرول */
 .header {
   background: white;
   padding: 15px;
@@ -31,14 +30,14 @@ body {
 }
 
 .logo { 
-  font-size: 28px; 
+  font-size: 26px; 
   font-weight: bold; 
   color: #2563EB; 
   transition: 0.3s;
 }
 
 .header.scrolled .logo {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .banner {
@@ -54,7 +53,14 @@ body {
 
 .banner p {
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+}
+
+.banner-note {
+  font-size: 16px;
+  color: #475569;
+  margin-top: 15px;
+  font-weight: 500;
 }
 
 .btn {
@@ -110,7 +116,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
-  max-width: 950px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -119,7 +125,7 @@ body {
   padding: 35px 25px; 
   border-radius: 15px; 
   box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
-  width: 300px; 
+  width: 310px; 
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
@@ -138,7 +144,7 @@ body {
 
 .card h3 {
   color: #2563EB;
-  font-size: 28px;
+  font-size: 24px;
   margin: 0 0 15px 0;
 }
 
@@ -151,8 +157,8 @@ body {
 .card .price {
   color: #16A34A;
   font-weight: bold;
-  font-size: 18px;
-  margin: 15px 0;
+  font-size: 17px;
+  margin: 15px 0 0 0;
 }
 
 .features {
@@ -183,11 +189,55 @@ body {
   font-size: 20px;
 }
 
+.about-box {
+  max-width: 800px; 
+  margin: 60px auto 0; 
+  text-align: right; 
+  background: white; 
+  padding: 35px; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.about-intro {
+  font-size: 18px; 
+  line-height: 1.8; 
+  margin-bottom: 20px;
+}
+
+.about-list {
+  font-size: 17px; 
+  line-height: 2;
+}
+
+.about-goal {
+  font-size: 18px; 
+  font-weight: bold; 
+  color: #2563EB; 
+  margin-top: 20px;
+}
+
 .footer {
   background: #1e293b;
   color: white;
   padding: 35px 20px;
   margin-top: 40px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.social a {
+  transition: 0.3s;
+}
+
+.social a:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
 }
 
 .footer .copy {
@@ -201,7 +251,6 @@ body {
   margin-top: 8px;
 }
 
-/* للموبايل + زر واتساب ثابت */
 @media (max-width: 768px) {
   .banner h1 { font-size: 28px; }
   .banner p { font-size: 18px; }
@@ -216,5 +265,10 @@ body {
     right: 20px;
     z-index: 99;
     box-shadow: 0 8px 20px rgba(22,163,74,0.4);
+  }
+  
+  .about-box {
+    padding: 25px 20px;
+    margin: 40px 20px 0;
   }
 }
