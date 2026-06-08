@@ -319,7 +319,7 @@ body {
   margin-top: 8px;
 }
 
-/* الجوال */
+/* الجوال - الزر اصغر شوي */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
@@ -353,6 +353,8 @@ body {
     right: 20px;
     z-index: 99;
     box-shadow: 0 8px 20px rgba(22,163,74,0.4);
+    padding: 12px 35px;
+    font-size: 16px;
   }
   
   .about-box {
