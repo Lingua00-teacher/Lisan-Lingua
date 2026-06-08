@@ -3,123 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Cambridge English Style | مدرس لغة إنجليزية المنهاج السعودي</title>
-  <meta name="description" content="مدرس لغة إنجليزية متخصص في المنهاج السعودي لجميع المراحل. شرح مبسط، تأسيس وتقوية، متابعة واجبات واختبارات، دروس فردية ومجموعات صغيرة عبر واتساب">
-  
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <title data-ar="مدرس لغة إنجليزية متخصص" data-en="Specialized English Teacher">مدرس لغة إنجليزية متخصص</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header class="header" id="header">
+  <!-- الهيدر -->
+  <header class="header">
     <div class="header-content">
-      <div class="logo">Cambridge English Style</div>
-      <div class="social-top">
-        <a href="https://www.facebook.com/share/1HgWbr6vHF/" target="_blank" class="social-btn fb">فيسبوك</a>
-        <a href="https://www.instagram.com/cambridge_english_style?igsh=cjluMWt1OHVwdnJm" target="_blank" class="social-btn insta">انستاجرام</a>
+      <div class="logo" data-ar="Cambridge English Style" data-en="Cambridge English Style">Cambridge English Style</div>
+      
+      <div class="header-controls">
+        <div class="dropdown">
+          <button class="dropbtn" data-ar="⚙️ الإعدادات" data-en="⚙️ Settings">⚙️ الإعدادات</button>
+          <div class="dropdown-content">
+            <a href="#" onclick="changeLang('ar')">🇸🇦 <span data-ar="عربي" data-en="Arabic">عربي</span></a>
+            <a href="#" onclick="changeLang('en')">🇬🇧 <span data-ar="إنجليزي" data-en="English">إنجليزي</span></a>
+            <a href="#" onclick="toggleTheme()">🌙 <span data-ar="الوضع الليلي" data-en="Dark Mode">الوضع الليلي</span></a>
+          </div>
+        </div>
+        
+        <div class="social-top">
+          <a href="https://instagram.com" target="_blank" class="social-btn insta" data-ar="انستاجرام" data-en="Instagram">انستاجرام</a>
+          <a href="https://facebook.com" target="_blank" class="social-btn fb" data-ar="فيسبوك" data-en="Facebook">فيسبوك</a>
+        </div>
       </div>
     </div>
   </header>
 
+  <!-- البانر -->
   <section class="banner">
-    <h1>مدرس لغة إنجليزية متخصص</h1>
-    <p>تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية<br>
-    شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح</p>
+    <h1 data-ar="مدرس لغة إنجليزية متخصص" data-en="Specialized English Teacher">مدرس لغة إنجليزية متخصص</h1>
+    <p data-ar="أكثر من 10 سنوات خبرة في تدريس IELTS و TOEFL" data-en="Over 10 years experience teaching IELTS & TOEFL">أكثر من 10 سنوات خبرة في تدريس IELTS و TOEFL</p>
+    <p class="banner-note" data-ar="دروس أونلاين فردية أو مجموعات صغيرة" data-en="Online classes: individual or small groups">دروس أونلاين فردية أو مجموعات صغيرة</p>
     
     <div class="btn-group">
-      <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn">احجز حصتك الآن</a>
-      <a href="https://www.facebook.com/share/1HgWbr6vHF/" target="_blank" class="btn-outline">تابعنا فيسبوك</a>
-      <a href="https://www.instagram.com/cambridge_english_style?igsh=cjluMWt1OHVwdnJm" target="_blank" class="btn-outline">تابعنا انستاجرام</a>
+      <a href="https://wa.me/9665XXXXXXXX" class="btn" data-ar="تواصل مع المدرس مباشرة" data-en="Contact Teacher Directly">تواصل مع المدرس مباشرة</a>
+      <a href="#courses" class="btn-outline" data-ar="شاهد الباقات" data-en="View Packages">شاهد الباقات</a>
     </div>
-    
-    <p class="banner-note">📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي</p>
   </section>
 
-  <section class="section" id="english">
-    <h2>خدماتنا التعليمية</h2>
+  <!-- الباقات -->
+  <section class="section" id="courses">
+    <h2 data-ar="الباقات المتوفرة" data-en="Available Packages">الباقات المتوفرة</h2>
     <div class="cards">
-      
       <div class="card">
-        <h3>👨‍🏫 مدرس متخصص</h3>
-        <p>تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية</p>
-        <p class="price">شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح</p>
+        <h3 data-ar="IELTS مكثف" data-en="IELTS Intensive">IELTS مكثف</h3>
+        <p data-ar="تحضير كامل للاختبار مع استراتيجيات" data-en="Full test prep with strategies">تحضير كامل للاختبار مع استراتيجيات</p>
+        <p class="price" data-ar="8 حصص - 400 ريال" data-en="8 Sessions - 400 SAR">8 حصص - 400 ريال</p>
+        <a href="https://wa.me/9665XXXXXXXX" class="btn-small" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
       </div>
-
       <div class="card">
-        <h3>📚 دروس خاصة وتقوية</h3>
-        <p>تعليم القواعد والمحادثة والقراءة والكتابة والاستماع</p>
-        <p class="price">بأسلوب سهل يناسب جميع المستويات الدراسية</p>
+        <h3 data-ar="محادثة متقدمة" data-en="Advanced Conversation">محادثة متقدمة</h3>
+        <p data-ar="تطوير الطلاقة والثقة بالنفس" data-en="Improve fluency & confidence">تطوير الطلاقة والثقة بالنفس</p>
+        <p class="price" data-ar="12 حصة - 500 ريال" data-en="12 Sessions - 500 SAR">12 حصة - 500 ريال</p>
+        <a href="https://wa.me/9665XXXXXXXX" class="btn-small" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
       </div>
-
       <div class="card">
-        <h3>🎯 متابعة ونتائج مميزة</h3>
-        <p>حل الواجبات والتدريب على الاختبارات</p>
-        <p class="price">ورفع مستوى الطالب خطوة بخطوة بثقة وتميز</p>
+        <h3 data-ar="تأسيس للأطفال" data-en="Kids Foundation">تأسيس للأطفال</h3>
+        <p data-ar="منهج تفاعلي ممتع للأعمار 8-14" data-en="Fun interactive curriculum ages 8-14">منهج تفاعلي ممتع للأعمار 8-14</p>
+        <p class="price" data-ar="16 حصة - 600 ريال" data-en="16 Sessions - 600 SAR">16 حصة - 600 SAR</p>
+        <a href="https://wa.me/9665XXXXXXXX" class="btn-small" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
       </div>
-
-    </div>
-    
-    <div style="margin-top: 40px;">
-      <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn">تواصل مع المدرس مباشرة</a>
     </div>
   </section>
 
+  <!-- المميزات -->
   <section class="section features">
-    <h2>ليش تختار Cambridge English Style؟</h2>
+    <h2 data-ar="لماذا تختارني؟" data-en="Why Choose Me?">لماذا تختارني؟</h2>
     <div class="cards">
-      
       <div class="feature">
-        <div class="icon">✅</div>
-        <h3>شرح مبسط وواضح</h3>
-        <p>نوصل المعلومة بأبسط طريقة تناسب كل طالب</p>
+        <div class="icon">📚</div>
+        <h3 data-ar="منهج معتمد" data-en="Certified Curriculum">منهج معتمد</h3>
+        <p data-ar="مواد Cambridge و Oxford الأصلية" data-en="Original Cambridge & Oxford materials">مواد Cambridge و Oxford الأصلية</p>
       </div>
-
       <div class="feature">
-        <div class="icon">✅</div>
-        <h3>تأسيس وتقوية</h3>
-        <p>نبني اساس قوي من الصفر حتى الاحتراف</p>
+        <div class="icon">⏰</div>
+        <h3 data-ar="مواعيد مرنة" data-en="Flexible Timing">مواعيد مرنة</h3>
+        <p data-ar="اختر الوقت المناسب لك" data-en="Choose your suitable time">اختر الوقت المناسب لك</p>
       </div>
-
       <div class="feature">
-        <div class="icon">✅</div>
-        <h3>متابعة مستمرة</h3>
-        <p>واجبات واختبارات ومتابعة لتحقيق افضل النتائج</p>
+        <div class="icon">🎯</div>
+        <h3 data-ar="نتائج مضمونة" data-en="Guaranteed Results">نتائج مضمونة</h3>
+        <p data-ar="خطة شخصية لكل طالب" data-en="Personal plan for each student">خطة شخصية لكل طالب</p>
       </div>
-
-    </div>
-
-    <div class="about-box">
-      <p class="about-intro">
-        مدرس لغة إنجليزية متخصص في المنهاج السعودي لجميع المراحل الدراسية (ابتدائي – متوسط – ثانوي).
-      </p>
-      <p class="about-list">
-        ✅ شرح مبسط وواضح<br>
-        ✅ تأسيس وتقوية في اللغة الإنجليزية<br>
-        ✅ متابعة الواجبات والاختبارات<br>
-        ✅ تحسين مهارات المحادثة والكتابة<br>
-        ✅ دروس فردية ومجموعات صغيرة<br>
-        ✅ متابعة مستمرة لتحقيق أفضل النتائج
-      </p>
-      <p class="about-goal">
-        هدفنا بناء أساس قوي في اللغة الإنجليزية وتحقيق التفوق الدراسي بثقة وتميز 🚀
-      </p>
     </div>
   </section>
 
+  <!-- من أنا -->
+  <section class="section">
+    <div class="about-box">
+      <p class="about-intro" data-ar="مرحباً، أنا أحمد مدرس لغة إنجليزية معتمد من Cambridge ولدي خبرة 10 سنوات في تدريس جميع المستويات." data-en="Hello, I'm Ahmed, a Cambridge certified English teacher with 10 years experience teaching all levels.">مرحباً، أنا أحمد مدرس لغة إنجليزية معتمد من Cambridge ولدي خبرة 10 سنوات في تدريس جميع المستويات.</p>
+      <ul class="about-list">
+        <li data-ar="✓ شهادة CELTA من Cambridge" data-en="✓ CELTA Certificate from Cambridge">✓ شهادة CELTA من Cambridge</li>
+        <li data-ar="✓ خبرة في تدريس IELTS, TOEFL, SAT" data-en="✓ Experience in IELTS, TOEFL, SAT">✓ خبرة في تدريس IELTS, TOEFL, SAT</li>
+        <li data-ar="✓ دروس تفاعلية 100% أونلاين" data-en="✓ 100% Interactive Online Classes">✓ دروس تفاعلية 100% أونلاين</li>
+      </ul>
+      <p class="about-goal" data-ar="هدفي: وصولك للمستوى المطلوب بأسرع وقت" data-en="My Goal: Help you reach your target level in the fastest time">هدفي: وصولك للمستوى المطلوب بأسرع وقت</p>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
   <footer class="footer">
     <div class="social">
-      <a href="https://www.facebook.com/share/1HgWbr6vHF/" target="_blank" aria-label="فيسبوك">
-        <svg width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+      <a href="https://instagram.com" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="35">
       </a>
-      <a href="https://www.instagram.com/cambridge_english_style?igsh=cjluMWt1OHVwdnJm" target="_blank" aria-label="انستاجرام">
-        <svg width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.06 1.8.27 2.22.45.56.22.96.48 1.38.9.42.42.68.82.9 1.38.18.42.39 1.05.45 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.06 1.17-.27 1.8-.45 2.22-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.18-1.05.39-2.22.45-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.06-1.8-.27-2.22-.45-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.18-.42-.39-1.05-.45-2.22C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.06-1.17.27-1.8.45-2.22.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.18 1.05-.39 2.22-.45C8.42 2.17 8.8 2.16 12 2.16m0-2.16C8.74 0 8.33.01 7.05.07 5.77.13 4.9.28 4.14.5 3.35.74 2.68 1.06 2.02 1.72.66 3.08.26 4.1.1 6.05.02 7.33 0 7.74 0 12s.01 4.67.07 5.95c.06 1.28.21 2.15.43 2.91.24.79.56 1.46 1.22 2.12.66.66 1.33 1.08 2.12 1.32.76.22 1.63.37 2.91.43 1.28.06 1.69.07 4.95.07s4.67-.01 5.95-.07c1.28-.06 2.15-.21 2.91-.43.79-.24 1.46-.56 2.12-1.22.66-.66 1.08-1.33 1.32-2.12.22-.76.37-1.63.43-2.91.06-1.28.07-1.69.07-4.95s-.01-4.67-.07-5.95c-.06-1.28-.21-2.15-.43-2.91-.24-.79-.56-1.46-1.22-2.12-.66-.66-1.33-1.08-2.12-1.32-.76-.22-1.63-.37-2.91-.43C16.67.01 16.26 0 12 0zm0 5.84c-3.4 0-6.16 2.76-6.16 6.16S8.6 18.16 12 18.16s6.16-2.76 6.16-6.16S15.4 5.84 12 5.84zm0 10.16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm6.4-11.84c-.8 0-1.44.64-1.44 1.44s.64 1.44 1.44 1.44 1.44-.64 1.44-1.44-.64-1.44-1.44-1.44z"/></svg>
+      <a href="https://facebook.com" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="35">
+      </a>
+      <a href="https://wa.me/9665XXXXXXXX" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="35">
       </a>
     </div>
-    <p class="copy">Cambridge English Style © 2026</p>
-    <p class="sub">مدرس لغة إنجليزية - المنهاج السعودي</p>
+    <p class="copy" data-ar="© 2026 Cambridge English Style - جميع الحقوق محفوظة" data-en="© 2026 Cambridge English Style - All Rights Reserved">© 2026 Cambridge English Style - جميع الحقوق محفوظة</p>
+    <p class="sub" data-ar="مدرس لغة إنجليزية معتمد" data-en="Certified English Teacher">مدرس لغة إنجليزية معتمد</p>
   </footer>
 
-  <script src="script.js"></script>
+<script>
+// تغيير اللغة
+function changeLang(lang) {
+  localStorage.setItem('lang', lang);
+  
+  document.documentElement.lang = lang;
+  document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  
+  document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+    el.innerText = el.getAttribute('data-' + lang);
+  });
+}
+
+// الوضع الليلي
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+}
+
+// استرجاع الاعدادات عند التحميل
+window.onload = function() {
+  const savedTheme = localStorage.getItem('theme');
+  const savedLang = localStorage.getItem('lang');
+  
+  if(savedTheme === 'dark') {
+    document.body.classList.add('dark');
+  }
+  if(savedLang) {
+    changeLang(savedLang);
+  }
+}
+
+// ظهور البطاقات مع السكرول
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.card, .feature').forEach(el => observer.observe(el));
+
+// الهيدر يصغر مع السكرول
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('.header');
+  if(window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+</script>
 </body>
 </html>
