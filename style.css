@@ -1,449 +1,116 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
-* {
+/* الخط الجديد */
+body {
+  font-family: 'Tajawal', sans-serif;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body { 
-  font-family: 'Cairo', Tahoma, sans-serif; 
-  background: #f8fafc; 
-  color: #1e293b;
-  text-align: center;
-  line-height: 1.6;
-  transition: 0.3s;
-}
-
-/* الهيدر */
-.header {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/london.jpg') center/cover;
-  padding: 60px 20px;
-  color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  transition: all 0.3s ease;
-}
-
-.header.scrolled {
-  padding: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.logo { 
-  font-size: 26px; 
-  font-weight: bold; 
-  color: #2563EB; 
-  transition: 0.3s;
-}
-
-.header.scrolled .logo {
-  font-size: 22px;
-}
-
-.header-controls {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.social-top {
-  display: flex;
-  gap: 10px;
-}
-
-.social-btn {
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.social-btn.fb { background: #1877F2; }
-.social-btn.insta { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); }
-.social-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-
-/* القائمة المنسدلة */
-.dropdown {
+  /* خلفية كامبردج شفافية 0.82 */
+  background-image: url('images/cam1.jpg'), url('images/cam2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   position: relative;
-  display: inline-block;
 }
 
-.dropbtn {
-  background: #2563EB;
-  color: white;
-  padding: 8px 16px;
-  font-size: 14px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.82); 
+  z-index: -1;
 }
 
-.dropbtn:hover { background: #1d4ed8; }
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  border-radius: 8px;
-  z-index: 1;
-  margin-top: 5px;
-}
-
-.dropdown-content a {
-  color: #1e293b;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 15px;
-  text-align: right;
-  transition: 0.2s;
-}
-
-.dropdown-content a:hover { background-color: #f1f5f9; }
-.dropdown:hover .dropdown-content { display: block; }
-
-/* البانر */
-.banner {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-}
-
-.banner h1 {
-  font-size: 36px;
-  color: #2563EB;
-  margin-bottom: 20px;
-}
-
-.banner p {
-  font-size: 20px;
-  margin-bottom: 25px;
-}
-
-.banner-note {
-  font-size: 16px;
-  color: #475569;
-  margin-top: 15px;
-  font-weight: 500;
-}
-
-.btn-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.btn {
-  background: #16A34A;
-  color: white;
-  padding: 15px 35px;
-  border: none;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #15803d;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(22,163,74,0.3);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #2563EB;
-  padding: 15px 30px;
-  border: 2px solid #2563EB;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  transition: 0.3s;
-}
-
-.btn-outline:hover {
-  background: #2563EB;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.btn-small {
-  background: #2563EB;
-  color: white;
-  padding: 10px 25px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 15px;
-  transition: 0.3s;
-}
-
-.btn-small:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
-}
-
-/* الاقسام */
-.section {
-  padding: 60px 20px;
-}
-
-.section h2 {
-  color: #2563EB;
-  font-size: 32px;
-  margin-bottom: 40px;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.card {
-  background: white; 
-  padding: 35px 25px; 
-  border-radius: 15px; 
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
-  width: 310px; 
-  text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.4s;
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(22,163,74,0.15);
-}
-
-.card h3 {
-  color: #2563EB;
-  font-size: 24px;
-  margin: 0 0 15px 0;
-}
-
-.card p {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 10px;
-}
-
-.card .price {
-  color: #16A34A;
-  font-weight: bold;
-  font-size: 17px;
-  margin: 15px 0 0 0;
-}
-
-.features {
-  background: white;
-}
-
-.feature {
-  width: 260px;
-  padding: 25px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.feature.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.feature .icon {
-  font-size: 45px;
-  margin-bottom: 15px;
-}
-
-.feature h3 {
-  color: #2563EB;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.about-box {
-  max-width: 800px; 
-  margin: 60px auto 0; 
-  text-align: right; 
-  background: white; 
-  padding: 35px; 
-  border-radius: 15px; 
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.about-intro {
-  font-size: 18px; 
-  line-height: 1.8; 
-  margin-bottom: 20px;
-}
-
-.about-list {
-  font-size: 17px; 
-  line-height: 2;
-  list-style: none;
-}
-
-.about-goal {
-  font-size: 18px; 
-  font-weight: bold; 
-  color: #2563EB; 
-  margin-top: 20px;
-}
-
-/* الفوتر */
-.footer {
-  background: #1e293b;
-  color: white;
-  padding: 35px 20px;
-  margin-top: 40px;
-}
-
-.social {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.social a {
-  transition: 0.3s;
-}
-
-.social a:hover {
-  transform: scale(1.15);
-  opacity: 0.8;
-}
-
-.footer .copy {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.footer .sub {
-  font-size: 14px;
-  opacity: 0.8;
-  margin-top: 8px;
-}
-
-/* الوضع الليلي */
+/* الوضع الليلي - الألوان متظبطة عشان الكلام يبان */
 body.dark {
-  background: #0f172a;
-  color: #e2e8f0;
+  color: #f0f0f0;
+}
+body.dark::before {
+  background: rgba(0, 0, 0, 0.9); /* أغمق عشان الفاتح يبان */
+}
+body.dark h1, 
+body.dark h2, 
+body.dark h3,
+body.dark .logo,
+body.dark .teacher-desc h2 {
+  color: #4da3ff; /* أزرق فاتح */
+}
+body.dark .teacher-desc p,
+body.dark .banner p,
+body.dark .card p {
+  color: #e0e0e0; /* رمادي فاتح مقروء */
+}
+body.dark strong,
+body.dark .trust-bar span {
+  color: #4ade80; /* أخضر نيون */
+}
+body.dark .trust-bar {
+  background: rgba(74, 222, 128, 0.15);
+  border-bottom: 2px solid #4ade80;
 }
 
-body.dark .header,
-body.dark .card,
-body.dark .about-box,
-body.dark .features,
-body.dark .dropdown-content {
-  background: #1e293b;
-  color: #e2e8f0;
+/* شريط الثقة */
+.trust-bar {
+  background: rgba(40, 167, 69, 0.1);
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid #28a745;
+}
+.trust-bar p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a3c6e;
+}
+.trust-bar span {
+  color: #28a745;
 }
 
-body.dark .section h2,
-body.dark .card h3,
-body.dark .banner h1,
-body.dark .logo {
-  color: #60a5fa;
+/* وصف المعلم */
+.teacher-desc {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+.teacher-desc h2 {
+  color: #1a3c6e;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.teacher-desc p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+}
+.teacher-desc strong {
+  color: #28a745;
 }
 
-body.dark .banner {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+/* الزرار الرئيسي */
+.btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #28a745;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #218838;
+  transform: translateY(-2px);
 }
 
-body.dark .dropdown-content a {
-  color: #e2e8f0;
-}
+/* باقي الاستايلات الأساسية */
+.header { padding: 20px; background: rgba(255,255,255,0.95); }
+.banner { text-align: center; padding: 60px 20px; }
+.section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card { background: rgba(255,255,255,0.9); padding: 30px; border-radius: 12px; text-align: center; }
+.footer { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.8); color: white; }
 
-body.dark .dropdown-content a:hover {
-  background-color: #334155;
-}
-
-/* الجوال */
 @media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .header-controls {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .banner h1 { font-size: 28px; }
-  .banner p { font-size: 18px; }
-  .banner { padding-bottom: 120px; }
-  .section h2 { font-size: 26px; }
-  .card { width: 100%; max-width: 340px; }
-  
-  .btn-group {
-    flex-direction: column;
-    padding: 0 20px;
-  }
-  
-  .btn, .btn-outline {
-    width: 100%;
-  }
-  
-  .btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    z-index: 99;
-    box-shadow: 0 8px 20px rgba(22,163,74,0.4);
-    padding: 12px 35px;
-    font-size: 16px;
-  }
-  
-  .about-box {
-    padding: 25px 20px;
-    margin: 40px 20px 0;
-    text-align: center;
-  }
-  
-  .about-list {
-    text-align: center;
-  }
+  .cards { grid-template-columns: 1fr; }
+  .header-content { flex-direction: column; gap: 15px; }
 }
