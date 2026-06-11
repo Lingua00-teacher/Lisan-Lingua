@@ -12,7 +12,7 @@
   <header class="header">
     <div class="header-content">
       <div class="logo" data-ar="Cambridge English Style" data-en="Cambridge English Style">Cambridge English Style</div>
-      
+
       <div class="header-controls">
         <div class="dropdown">
           <button class="dropbtn" data-ar="⚙️ الإعدادات" data-en="⚙️ Settings">⚙️ الإعدادات</button>
@@ -22,7 +22,7 @@
             <a href="#" onclick="toggleTheme()">🌙 <span data-ar="الوضع الليلي" data-en="Dark Mode">الوضع الليلي</span></a>
           </div>
         </div>
-        
+
         <div class="social-top">
           <a href="https://www.instagram.com/cambridge_english_style?igsh=cjluMWt1OHVwdnJm" target="_blank" class="social-btn insta" data-ar="انستاجرام" data-en="Instagram">انستاجرام</a>
           <a href="https://www.facebook.com/61580635530969/" target="_blank" class="social-btn fb" data-ar="فيسبوك" data-en="Facebook">فيسبوك</a>
@@ -31,18 +31,21 @@
     </div>
   </header>
 
-  <!-- شريط الثقة -->
+  <!-- شريط الثقة بالعداد الحقي -->
   <section class="trust-bar">
-    <p>⭐ 100% تقييم من الطلاب <span>(1,144 تقييم)</span> | مدرس معتمد TESOL</p>
+    <p>
+      ⭐ <b><span id="avg-rating">0.0</span></b> تقييم من الطلاب
+      <span>(<b><span id="student-count">0</span></b> تقييم)</span> | مدرس معتمد TESOL
+    </p>
   </section>
 
   <!-- وصف المعلم -->
   <section class="teacher-desc">
     <h2>تجد صعوبة في الإنجليزية؟</h2>
     <p>
-      مع <strong>مستر ماهر - معتمد TESOL</strong>، حوّل ضعفك في القواعد والمحادثة إلى نقطة قوة. 
-      دروس فردية ومجموعات مصغرة، مصممة خصيصاً للمنهاج السعودي. 
-      ابدأ رحلة التفوق من اليوم، وكن ضمن <strong>1144 طالب حققوا أعلى الدرجات</strong>.
+      مع <strong>مستر ماهر - معتمد TESOL</strong>، حوّل ضعفك في القواعد والمحادثة إلى نقطة قوة.
+      دروس فردية ومجموعات مصغرة، مصممة خصيصاً للمنهاج السعودي.
+      ابدأ رحلة التفوق من اليوم، وكن ضمن <strong><span id="student-count-2">0</span> طالب حققوا أعلى الدرجات</strong>.
     </p>
   </section>
 
@@ -51,12 +54,12 @@
     <h1 data-ar="👨‍🏫 مدرس لغة إنجليزية متخصص" data-en="👨‍🏫 Specialized English Teacher">👨‍🏫 مدرس لغة إنجليزية متخصص</h1>
     <p data-ar="تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية" data-en="Teaching Saudi curriculum for Elementary, Middle & High School">تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية</p>
     <p class="banner-note" data-ar="شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح" data-en="Simplified explanation & continuous follow-up to ensure excellence and success">شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح</p>
-    
+
     <div class="btn-group">
       <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn" data-ar="احجز حصتك الآن" data-en="Book Your Session Now">احجز حصتك الآن</a>
       <a href="#courses" class="btn-outline" data-ar="تواصل مع المدرس مباشرة" data-en="Contact Teacher Directly">تواصل مع المدرس مباشرة</a>
     </div>
-    
+
     <p class="banner-note" style="margin-top: 30px;" data-ar="📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي" data-en="📱 Inquire now and get an educational plan suited to your level">📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي</p>
   </section>
 
@@ -103,10 +106,11 @@
   </footer>
 
 <script>
+// لغة + ثيم
 function changeLang(lang) {
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang;
-  document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.body.dir = lang === 'ar'? 'rtl' : 'ltr';
   document.querySelectorAll('[data-ar][data-en]').forEach(el => {
     el.innerText = el.getAttribute('data-' + lang);
   });
@@ -114,7 +118,7 @@ function changeLang(lang) {
 
 function toggleTheme() {
   document.body.classList.toggle('dark');
-  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+  localStorage.setItem('theme', document.body.classList.contains('dark')? 'dark' : 'light');
 }
 
 window.onload = function() {
@@ -122,6 +126,29 @@ window.onload = function() {
   const savedLang = localStorage.getItem('lang');
   if(savedTheme === 'dark') document.body.classList.add('dark');
   if(savedLang) changeLang(savedLang);
+
+  // جلب التقييمات من Google Sheets
+  const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1D-42eQOkBQWl8LcZ7MsJHbXvYY8dXZdnJd0KjsNRcdU/gviz/tq?tqx=out:csv&gid=827828345';
+
+  fetch(SHEET_URL)
+ .then(res => res.text())
+ .then(csv => {
+    const rows = csv.split('\n').slice(1); // نشيل سطر العناوين
+    const realRows = rows.filter(r => r.trim() && r.split(',')[1]); // نشيل الفاضي
+    const count = realRows.length;
+
+    // نحدث العداد في كل الأماكن
+    document.getElementById('student-count').innerText = count;
+    document.getElementById('student-count-2').innerText = count;
+
+    // العمود C = النجوم، رقم 2 عشان بنعد من 0
+    const ratings = realRows.map(r => Number(r.split(',')[2])).filter(n => n > 0);
+    const avg = ratings.length > 0? ratings.reduce((a,b) => a+b, 0) / ratings.length : 0;
+    document.getElementById('avg-rating').innerText = avg.toFixed(1);
+  })
+ .catch(err => {
+    console.log('لسه مفيش تقييمات', err);
+  });
 }
 </script>
 </body>
