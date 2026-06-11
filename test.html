@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-ar="مدرس لغة إنجليزية - المنهاج السعودي" data-en="English Teacher - Saudi Curriculum">مدرس لغة إنجليزية - المنهاج السعودي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- الهيدر -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo" data-ar="Cambridge English Style" data-en="Cambridge English Style">Cambridge English Style</div>
+      
+      <div class="header-controls">
+        <div class="dropdown">
+          <button class="dropbtn" data-ar="⚙️ الإعدادات" data-en="⚙️ Settings">⚙️ الإعدادات</button>
+          <div class="dropdown-content">
+            <a href="#" onclick="changeLang('ar')">🇸🇦 <span data-ar="عربي" data-en="Arabic">عربي</span></a>
+            <a href="#" onclick="changeLang('en')">🇬🇧 <span data-ar="إنجليزي" data-en="English">إنجليزي</span></a>
+            <a href="#" onclick="toggleTheme()">🌙 <span data-ar="الوضع الليلي" data-en="Dark Mode">الوضع الليلي</span></a>
+          </div>
+        </div>
+        
+        <div class="social-top">
+          <a href="https://www.instagram.com/cambridge_english_style?igsh=cjluMWt1OHVwdnJm" target="_blank" class="social-btn insta" data-ar="انستاجرام" data-en="Instagram">انستاجرام</a>
+          <a href="https://www.facebook.com/61580635530969/" target="_blank" class="social-btn fb" data-ar="فيسبوك" data-en="Facebook">فيسبوك</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- معرض صور كامبردج -->
+<section style="padding: 40px 20px; max-width: 1000px; margin: auto;">
+  <h2 style="text-align: center; margin-bottom: 30px;">صور من كامبردج</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+    <img src="images/cam1.jpg" alt="كامبردج 1" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <img src="images/cam2.jpg" alt="كامبردج 2" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+  </div>
+</section>
+
+  <!-- البانر - القسم الأول -->
+  <section class="banner">
+    <h1 data-ar="👨‍🏫 مدرس لغة إنجليزية متخصص" data-en="👨‍🏫 Specialized English Teacher">👨‍🏫 مدرس لغة إنجليزية متخصص</h1>
+    <p data-ar="تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية" data-en="Teaching Saudi curriculum for Elementary, Middle & High School">تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية</p>
+    <p class="banner-note" data-ar="شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح" data-en="Simplified explanation & continuous follow-up to ensure excellence and success">شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح</p>
+    
+    <div class="btn-group">
+      <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn" data-ar="احجز حصتك الآن" data-en="Book Your Session Now">احجز حصتك الآن</a>
+      <a href="#courses" class="btn-outline" data-ar="تواصل مع المدرس مباشرة" data-en="Contact Teacher Directly">تواصل مع المدرس مباشرة</a>
+    </div>
+    
+    <p class="banner-note" style="margin-top: 30px;" data-ar="📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي" data-en="📱 Inquire now and get an educational plan suited to your level">📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي</p>
+  </section>
+
+  <!-- القسم الثاني - الدروس -->
+  <section class="section" id="courses">
+    <h2 data-ar="📚 دروس خاصة وتقوية شاملة" data-en="📚 Private & Comprehensive Tutoring">📚 دروس خاصة وتقوية شاملة</h2>
+    <div class="cards">
+      <div class="card">
+        <h3 data-ar="القواعد" data-en="Grammar">القواعد</h3>
+        <p data-ar="تعليم القواعد والمحادثة والقراءة والكتابة والاستماع" data-en="Teaching grammar, speaking, reading, writing & listening">تعليم القواعد والمحادثة والقراءة والكتابة والاستماع</p>
+        <p class="price" data-ar="بأسلوب سهل يناسب جميع المستويات" data-en="In an easy style suitable for all levels">بأسلوب سهل يناسب جميع المستويات</p>
+        <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn-small" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
+      </div>
+      <div class="card">
+        <h3 data-ar="المراحل الدراسية" data-en="School Levels">المراحل الدراسية</h3>
+        <p data-ar="ابتدائي - متوسط - ثانوي" data-en="Elementary - Middle - High School">ابتدائي - متوسط - ثانوي</p>
+        <p class="price" data-ar="منهج سعودي معتمد" data-en="Approved Saudi curriculum">منهج سعودي معتمد</p>
+        <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn-small" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
+      </div>
+      <div class="card">
+        <h3 data-ar="نوع الدروس" data-en="Class Type">نوع الدروس</h3>
+        <p data-ar="دروس فردية ومجموعات صغيرة" data-en="Individual & small group classes">دروس فردية ومجموعات صغيرة</p>
+        <p class="price" data-ar="أونلاين مباشر" data-en="Live Online">أونلاين مباشر</p>
+        <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn-small" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم إضافي - المتابعة -->
+  <section class="section features">
+    <h2 data-ar="🎯 متابعة ونتائج مميزة" data-en="🎯 Follow-up & Excellent Results">🎯 متابعة ونتائج مميزة</h2>
+    <div class="cards">
+      <div class="feature">
+        <div class="icon">📝</div>
+        <h3 data-ar="حل الواجبات" data-en="Homework Help">حل الواجبات</h3>
+        <p data-ar="حل الواجبات والتدريب على الاختبارات" data-en="Solving homework & training for exams">حل الواجبات والتدريب على الاختبارات</p>
+      </div>
+      <div class="feature">
+        <div class="icon">📊</div>
+        <h3 data-ar="متابعة مستمرة" data-en="Continuous Follow-up">متابعة مستمرة</h3>
+        <p data-ar="متابعة الطالب خطوة بخطوة" data-en="Following up with the student step by step">متابعة الطالب خطوة بخطوة</p>
+      </div>
+      <div class="feature">
+        <div class="icon">🚀</div>
+        <h3 data-ar="رفع المستوى" data-en="Level Up">رفع المستوى</h3>
+        <p data-ar="رفع مستوى الطالب بثقة وتميز" data-en="Raising student level with confidence & excellence">رفع مستوى الطالب بثقة وتميز</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- النبذة الاحترافية -->
+  <section class="section">
+    <div class="about-box">
+      <p class="about-intro" data-ar="مدرس لغة إنجليزية متخصص في المنهاج السعودي لجميع المراحل الدراسية (ابتدائي – متوسط – ثانوي)." data-en="Specialized English teacher for Saudi curriculum for all educational stages (Elementary – Middle – High School).">مدرس لغة إنجليزية متخصص في المنهاج السعودي لجميع المراحل الدراسية (ابتدائي – متوسط – ثانوي).</p>
+      <ul class="about-list">
+        <li data-ar="✅ شرح مبسط وواضح" data-en="✅ Simple & clear explanation">✅ شرح مبسط وواضح</li>
+        <li data-ar="✅ تأسيس وتقوية في اللغة الإنجليزية" data-en="✅ Foundation & strengthening in English">✅ تأسيس وتقوية في اللغة الإنجليزية</li>
+        <li data-ar="✅ متابعة الواجبات والاختبارات" data-en="✅ Homework & exam follow-up">✅ متابعة الواجبات والاختبارات</li>
+        <li data-ar="✅ تحسين مهارات المحادثة والكتابة" data-en="✅ Improve speaking & writing skills">✅ تحسين مهارات المحادثة والكتابة</li>
+        <li data-ar="✅ دروس فردية ومجموعات صغيرة" data-en="✅ Individual & small group classes">✅ دروس فردية ومجموعات صغيرة</li>
+        <li data-ar="✅ متابعة مستمرة لتحقيق أفضل النتائج" data-en="✅ Continuous follow-up for best results">✅ متابعة مستمرة لتحقيق أفضل النتائج</li>
+      </ul>
+      <p class="about-goal" data-ar="هدفنا بناء أساس قوي في اللغة الإنجليزية وتحقيق التفوق الدراسي بثقة وتميز 🚀" data-en="Our goal: Build a strong foundation in English and achieve academic excellence with confidence & excellence 🚀">هدفنا بناء أساس قوي في اللغة الإنجليزية وتحقيق التفوق الدراسي بثقة وتميز 🚀</p>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer class="footer">
+    <div class="social">
+      <a href="https://www.instagram.com/cambridge_english_style?igsh=cjluMWt1OHVwdnJm" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="35">
+      </a>
+      <a href="https://www.facebook.com/61580635530969/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="35">
+      </a>
+      <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="35">
+      </a>
+    </div>
+    <p class="copy" data-ar="© 2026 Cambridge English Style - جميع الحقوق محفوظة" data-en="© 2026 Cambridge English Style - All Rights Reserved">© 2026 Cambridge English Style - All Rights Reserved</p>
+    <p class="sub" data-ar="مدرس لغة إنجليزية - المنهاج السعودي" data-en="English Teacher - Saudi Curriculum">مدرس لغة إنجليزية - المنهاج السعودي</p>
+  </footer>
+
+<script>
+function changeLang(lang) {
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+  document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+    el.innerText = el.getAttribute('data-' + lang);
+  });
+}
+
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+}
+
+window.onload = function() {
+  const savedTheme = localStorage.getItem('theme');
+  const savedLang = localStorage.getItem('lang');
+  if(savedTheme === 'dark') document.body.classList.add('dark');
+  if(savedLang) changeLang(savedLang);
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+});
+
+document.querySelectorAll('.card, .feature').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('.header');
+  if(window.scrollY > 50) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+});
+</script>
+</body>
+</html>
