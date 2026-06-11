@@ -121,6 +121,12 @@ function toggleTheme() {
   localStorage.setItem('theme', document.body.classList.contains('dark')? 'dark' : 'light');
 }
 
+// دالة تفك CSV صح حتى لو فيه فواصل جوه النص
+function parseCSV(csv) {
+  const lines = csv.split('\n');
+  return lines.map(line => line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || []);
+}
+
 window.onload = function() {
   const savedTheme = localStorage.getItem('theme');
   const savedLang = localStorage.getItem('lang');
@@ -128,26 +134,27 @@ window.onload = function() {
   if(savedLang) changeLang(savedLang);
 
   // جلب التقييمات من Google Sheets
-  
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSEWpNC7zAWhXmyuvT2VVbZ3tQcFb_EpplH3sI74RuC_s-J98geS4RvWJudqTA9j-by4ICFzuveozyL/pub?gid=688115288&single=true&output=csv';
+  const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSEWpNC7zAWhXmyuvT2VVbZ3tQcFb_EpplH3sI74RuC_s-J98geS4RvWJudqTA9j-by4ICFzuveozyL/pub?gid=688115288&single=true&output=csv';
+
   fetch(SHEET_URL)
  .then(res => res.text())
  .then(csv => {
-    const rows = csv.split('\n').slice(1); // نشيل سطر العناوين
-    const realRows = rows.filter(r => r.trim() && r.split(',')[1]); // نشيل الفاضي
-    const count = realRows.length;
+    const rows = parseCSV(csv).slice(1); // نشيل سطر العناوين
+    const realRows = rows.filter(r => r.length > 2 && r[2]); // نشيل الفاضي
 
-    // نحدث العداد في كل الأماكن
+    const count = realRows.length;
     document.getElementById('student-count').innerText = count;
     document.getElementById('student-count-2').innerText = count;
 
-    // العمود C = النجوم، رقم 2 عشان بنعد من 0
-    const ratings = realRows.map(r => Number(r.split(',')[2])).filter(n => n > 0);
+    // العمود رقم 3 = النجوم
+    const ratings = realRows.map(r => Number(r[2].replace(/"/g,''))).filter(n => n > 0);
     const avg = ratings.length > 0? ratings.reduce((a,b) => a+b, 0) / ratings.length : 0;
     document.getElementById('avg-rating').innerText = avg.toFixed(1);
+
+    console.log('عدد التقييمات:', count, 'المتوسط:', avg);
   })
  .catch(err => {
-    console.log('لسه مفيش تقييمات', err);
+    console.log('خطأ في جلب البيانات:', err);
   });
 }
 </script>
