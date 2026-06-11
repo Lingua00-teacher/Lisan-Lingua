@@ -128,8 +128,8 @@ window.onload = function() {
   if(savedLang) changeLang(savedLang);
 
   // جلب التقييمات من Google Sheets
-  const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1D-42eQOkBQWl8LcZ7MsJHbXvYY8dXZdnJd0KjsNRcdU/gviz/tq?tqx=out:csv&gid=827828345';
-
+  
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSEWpNC7zAWhXmyuvT2VVbZ3tQcFb_EpplH3sI74RuC_s-J98geS4RvWJudqTA9j-by4ICFzuveozyL/pub?gid=688115288&single=true&output=csv';
   fetch(SHEET_URL)
  .then(res => res.text())
  .then(csv => {
