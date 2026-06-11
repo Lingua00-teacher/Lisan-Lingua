@@ -5,71 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-ar="مدرس لغة إنجليزية - المنهاج السعودي" data-en="English Teacher - Saudi Curriculum">مدرس لغة إنجليزية - المنهاج السعودي</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* 1. خلفية الصفحة = صور كامبردج أغمق شوية */
-    body {
-      background-image: url('images/cam1.jpg'), url('images/cam2.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      position: relative;
-      margin: 0;
-    }
-    
-    /* 2. طبقة بيضا شفافية 0.82 - أغمق من الأول */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(255, 255, 255, 0.82); 
-      z-index: -1;
-    }
-
-    /* 3. الوضع الليلي */
-    body.dark::before {
-      background: rgba(0, 0, 0, 0.75);
-    }
-
-    /* 4. شريط الثقة */
-    .trust-bar {
-      background: rgba(40, 167, 69, 0.1);
-      padding: 15px;
-      text-align: center;
-      border-bottom: 2px solid #28a745;
-    }
-    .trust-bar p {
-      margin: 0;
-      font-size: 18px;
-      font-weight: bold;
-      color: #1a3c6e;
-    }
-    .trust-bar span {
-      color: #28a745;
-    }
-
-    /* 5. وصف المعلم */
-    .teacher-desc {
-      text-align: center;
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    .teacher-desc h2 {
-      color: #1a3c6e;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-    .teacher-desc p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #333;
-    }
-    .teacher-desc strong {
-      color: #28a745;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- الهيدر -->
@@ -95,12 +31,12 @@
     </div>
   </header>
 
-  <!-- شريط الثقة الجديد -->
+  <!-- شريط الثقة -->
   <section class="trust-bar">
     <p>⭐ 100% تقييم من الطلاب <span>(1,144 تقييم)</span> | مدرس معتمد TESOL</p>
   </section>
 
-  <!-- وصف المعلم - الصيغة الثانية "مشكلة + حل" -->
+  <!-- وصف المعلم -->
   <section class="teacher-desc">
     <h2>تجد صعوبة في الإنجليزية؟</h2>
     <p>
@@ -110,7 +46,7 @@
     </p>
   </section>
 
-  <!-- البانر - القسم الأول -->
+  <!-- البانر -->
   <section class="banner">
     <h1 data-ar="👨‍🏫 مدرس لغة إنجليزية متخصص" data-en="👨‍🏫 Specialized English Teacher">👨‍🏫 مدرس لغة إنجليزية متخصص</h1>
     <p data-ar="تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية" data-en="Teaching Saudi curriculum for Elementary, Middle & High School">تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية</p>
@@ -124,7 +60,7 @@
     <p class="banner-note" style="margin-top: 30px;" data-ar="📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي" data-en="📱 Inquire now and get an educational plan suited to your level">📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي</p>
   </section>
 
-  <!-- القسم الثاني - الدروس -->
+  <!-- الدروس -->
   <section class="section" id="courses">
     <h2 data-ar="📚 دروس خاصة وتقوية شاملة" data-en="📚 Private & Comprehensive Tutoring">📚 دروس خاصة وتقوية شاملة</h2>
     <div class="cards">
@@ -146,44 +82,6 @@
         <p class="price" data-ar="أونلاين مباشر" data-en="Live Online">أونلاين مباشر</p>
         <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn-small" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
       </div>
-    </div>
-  </section>
-
-  <!-- قسم إضافي - المتابعة -->
-  <section class="section features">
-    <h2 data-ar="🎯 متابعة ونتائج مميزة" data-en="🎯 Follow-up & Excellent Results">🎯 متابعة ونتائج مميزة</h2>
-    <div class="cards">
-      <div class="feature">
-        <div class="icon">📝</div>
-        <h3 data-ar="حل الواجبات" data-en="Homework Help">حل الواجبات</h3>
-        <p data-ar="حل الواجبات والتدريب على الاختبارات" data-en="Solving homework & training for exams">حل الواجبات والتدريب على الاختبارات</p>
-      </div>
-      <div class="feature">
-        <div class="icon">📊</div>
-        <h3 data-ar="متابعة مستمرة" data-en="Continuous Follow-up">متابعة مستمرة</h3>
-        <p data-ar="متابعة الطالب خطوة بخطوة" data-en="Following up with the student step by step">متابعة الطالب خطوة بخطوة</p>
-      </div>
-      <div class="feature">
-        <div class="icon">🚀</div>
-        <h3 data-ar="رفع المستوى" data-en="Level Up">رفع مستوى الطالب بثقة وتميز</h3>
-        <p data-ar="رفع مستوى الطالب بثقة وتميز" data-en="Raising student level with confidence & excellence">رفع مستوى الطالب بثقة وتميز</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- النبذة الاحترافية -->
-  <section class="section">
-    <div class="about-box">
-      <p class="about-intro" data-ar="مدرس لغة إنجليزية متخصص في المنهاج السعودي لجميع المراحل الدراسية (ابتدائي – متوسط – ثانوي)." data-en="Specialized English teacher for Saudi curriculum for all educational stages (Elementary – Middle – High School).">مدرس لغة إنجليزية متخصص في المنهاج السعودي لجميع المراحل الدراسية (ابتدائي – متوسط – ثانوي).</p>
-      <ul class="about-list">
-        <li data-ar="✅ شرح مبسط وواضح" data-en="✅ Simple & clear explanation">✅ شرح مبسط وواضح</li>
-        <li data-ar="✅ تأسيس وتقوية في اللغة الإنجليزية" data-en="✅ Foundation & strengthening in English">✅ تأسيس وتقوية في اللغة الإنجليزية</li>
-        <li data-ar="✅ متابعة الواجبات والاختبارات" data-en="✅ Homework & exam follow-up">✅ متابعة الواجبات والاختبارات</li>
-        <li data-ar="✅ تحسين مهارات المحادثة والكتابة" data-en="✅ Improve speaking & writing skills">✅ تحسين مهارات المحادثة والكتابة</li>
-        <li data-ar="✅ دروس فردية ومجموعات صغيرة" data-en="✅ Individual & small group classes">✅ Individual & small group classes</li>
-        <li data-ar="✅ متابعة مستمرة لتحقيق أفضل النتائج" data-en="✅ Continuous follow-up for best results">✅ Continuous follow-up for best results</li>
-      </ul>
-      <p class="about-goal" data-ar="هدفنا بناء أساس قوي في اللغة الإنجليزية وتحقيق التفوق الدراسي بثقة وتميز 🚀" data-en="Our goal: Build a strong foundation in English and achieve academic excellence with confidence & excellence 🚀">هدفنا بناء أساس قوي في اللغة الإنجليزية وتحقيق التفوق الدراسي بثقة وتميز 🚀</p>
     </div>
   </section>
 
@@ -225,20 +123,6 @@ window.onload = function() {
   if(savedTheme === 'dark') document.body.classList.add('dark');
   if(savedLang) changeLang(savedLang);
 }
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('show');
-  });
-});
-
-document.querySelectorAll('.card, .feature').forEach(el => observer.observe(el));
-
-window.addEventListener('scroll', function() {
-  const header = document.querySelector('.header');
-  if(window.scrollY > 50) header.classList.add('scrolled');
-  else header.classList.remove('scrolled');
-});
 </script>
 </body>
 </html>
