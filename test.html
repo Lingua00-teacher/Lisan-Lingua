@@ -123,8 +123,24 @@ function toggleTheme() {
 
 // دالة تفك CSV صح حتى لو فيه فواصل جوه النص
 function parseCSV(csv) {
-  const lines = csv.split('\n');
-  return lines.map(line => line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || []);
+  const lines = csv.trim().split('\n');
+  return lines.map(line => {
+    const result = [];
+    let current = '';
+    let inQuotes = false;
+    for(let i=0; i<line.length; i++) {
+      const char = line[i];
+      if(char === '"') inQuotes =!inQuotes;
+      else if(char === ',' &&!inQuotes) {
+        result.push(current.trim());
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+    result.push(current.trim());
+    return result.map(v => v.replace(/^"|"$/g, ''));
+  });
 }
 
 window.onload = function() {
@@ -133,28 +149,32 @@ window.onload = function() {
   if(savedTheme === 'dark') document.body.classList.add('dark');
   if(savedLang) changeLang(savedLang);
 
-  // جلب التقييمات من Google Sheets
   const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSEWpNC7zAWhXmyuvT2VVbZ3tQcFb_EpplH3sI74RuC_s-J98geS4RvWJudqTA9j-by4ICFzuveozyL/pub?gid=688115288&single=true&output=csv';
 
   fetch(SHEET_URL)
- .then(res => res.text())
- .then(csv => {
-    const rows = parseCSV(csv).slice(1); // نشيل سطر العناوين
-    const realRows = rows.filter(r => r.length > 2 && r[2]); // نشيل الفاضي
+.then(res => res.text())
+.then(csv => {
+    const data = parseCSV(csv);
+    const headers = data[0]; // سطر العناوين
+    const rows = data.slice(1).filter(r => r.length > 1 && r.some(c => c)); // نشيل الفاضي
 
-    const count = realRows.length;
+    // ندور على اسم العمود بدل الرقم
+    const ratingCol = headers.findIndex(h => h.includes('نجوم') || h.toLowerCase().includes('rating'));
+    const nameCol = headers.findIndex(h => h.includes('الاسم') || h.toLowerCase().includes('name'));
+    const commentCol = headers.findIndex(h => h.includes('رأيك') || h.includes('تعليق'));
+
+    const count = rows.filter(r => r[ratingCol] && Number(r[ratingCol]) > 0).length;
     document.getElementById('student-count').innerText = count;
     document.getElementById('student-count-2').innerText = count;
 
-    // العمود رقم 3 = النجوم
-    const ratings = realRows.map(r => Number(r[2].replace(/"/g,''))).filter(n => n > 0);
+    const ratings = rows.map(r => Number(r[ratingCol])).filter(n => n > 0);
     const avg = ratings.length > 0? ratings.reduce((a,b) => a+b, 0) / ratings.length : 0;
     document.getElementById('avg-rating').innerText = avg.toFixed(1);
 
-    console.log('عدد التقييمات:', count, 'المتوسط:', avg);
+    console.log('✅ تم التحميل - عمود النجوم:', headers[ratingCol], 'العدد:', count, 'المتوسط:', avg.toFixed(1));
   })
- .catch(err => {
-    console.log('خطأ في جلب البيانات:', err);
+.catch(err => {
+    console.log('❌ خطأ في جلب البيانات:', err);
   });
 }
 </script>
