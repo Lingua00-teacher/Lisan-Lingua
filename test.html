@@ -6,7 +6,7 @@
   <title data-ar="مدرس لغة إنجليزية - المنهاج السعودي" data-en="English Teacher - Saudi Curriculum">مدرس لغة إنجليزية - المنهاج السعودي</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* 1. خلفية الصفحة = صور كامبردج شفافة */
+    /* 1. خلفية الصفحة = صور كامبردج أغمق شوية */
     body {
       background-image: url('images/cam1.jpg'), url('images/cam2.jpg');
       background-size: cover;
@@ -14,21 +14,60 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
       position: relative;
+      margin: 0;
     }
     
-    /* 2. طبقة بيضا شفافة عشان الكتابة تبان واضحة */
+    /* 2. طبقة بيضا شفافية 0.82 - أغمق من الأول */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(255, 255, 255, 0.9); /* خليها 0.8 لو عايز الصور أوضح */
+      background: rgba(255, 255, 255, 0.82); 
       z-index: -1;
     }
 
-    /* 3. لو الوضع الليلي شغال */
+    /* 3. الوضع الليلي */
     body.dark::before {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    /* 4. شريط الثقة */
+    .trust-bar {
+      background: rgba(40, 167, 69, 0.1);
+      padding: 15px;
+      text-align: center;
+      border-bottom: 2px solid #28a745;
+    }
+    .trust-bar p {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: #1a3c6e;
+    }
+    .trust-bar span {
+      color: #28a745;
+    }
+
+    /* 5. وصف المعلم */
+    .teacher-desc {
+      text-align: center;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .teacher-desc h2 {
+      color: #1a3c6e;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .teacher-desc p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+    .teacher-desc strong {
+      color: #28a745;
     }
   </style>
 </head>
@@ -56,8 +95,20 @@
     </div>
   </header>
 
-  <!-- 4. شلنا سكشن "صور من كامبردج" كله - عشان ميبقاش فيه تشتيت -->
-  <!-- كان هنا <section> معرض صور كامبردج </section> ومسحناه -->
+  <!-- شريط الثقة الجديد -->
+  <section class="trust-bar">
+    <p>⭐ 100% تقييم من الطلاب <span>(1,144 تقييم)</span> | مدرس معتمد TESOL</p>
+  </section>
+
+  <!-- وصف المعلم - الصيغة الثانية "مشكلة + حل" -->
+  <section class="teacher-desc">
+    <h2>تجد صعوبة في الإنجليزية؟</h2>
+    <p>
+      مع <strong>مستر ماهر - معتمد TESOL</strong>، حوّل ضعفك في القواعد والمحادثة إلى نقطة قوة. 
+      دروس فردية ومجموعات مصغرة، مصممة خصيصاً للمنهاج السعودي. 
+      ابدأ رحلة التفوق من اليوم، وكن ضمن <strong>1144 طالب حققوا أعلى الدرجات</strong>.
+    </p>
+  </section>
 
   <!-- البانر - القسم الأول -->
   <section class="banner">
@@ -73,7 +124,6 @@
     <p class="banner-note" style="margin-top: 30px;" data-ar="📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي" data-en="📱 Inquire now and get an educational plan suited to your level">📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي</p>
   </section>
 
-  <!-- باقي الأقسام زي ما هي... -->
   <!-- القسم الثاني - الدروس -->
   <section class="section" id="courses">
     <h2 data-ar="📚 دروس خاصة وتقوية شاملة" data-en="📚 Private & Comprehensive Tutoring">📚 دروس خاصة وتقوية شاملة</h2>
@@ -99,7 +149,96 @@
     </div>
   </section>
 
-  <!-- باقي الكود زي ما هو... الفوتر والـ script -->
+  <!-- قسم إضافي - المتابعة -->
+  <section class="section features">
+    <h2 data-ar="🎯 متابعة ونتائج مميزة" data-en="🎯 Follow-up & Excellent Results">🎯 متابعة ونتائج مميزة</h2>
+    <div class="cards">
+      <div class="feature">
+        <div class="icon">📝</div>
+        <h3 data-ar="حل الواجبات" data-en="Homework Help">حل الواجبات</h3>
+        <p data-ar="حل الواجبات والتدريب على الاختبارات" data-en="Solving homework & training for exams">حل الواجبات والتدريب على الاختبارات</p>
+      </div>
+      <div class="feature">
+        <div class="icon">📊</div>
+        <h3 data-ar="متابعة مستمرة" data-en="Continuous Follow-up">متابعة مستمرة</h3>
+        <p data-ar="متابعة الطالب خطوة بخطوة" data-en="Following up with the student step by step">متابعة الطالب خطوة بخطوة</p>
+      </div>
+      <div class="feature">
+        <div class="icon">🚀</div>
+        <h3 data-ar="رفع المستوى" data-en="Level Up">رفع مستوى الطالب بثقة وتميز</h3>
+        <p data-ar="رفع مستوى الطالب بثقة وتميز" data-en="Raising student level with confidence & excellence">رفع مستوى الطالب بثقة وتميز</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- النبذة الاحترافية -->
+  <section class="section">
+    <div class="about-box">
+      <p class="about-intro" data-ar="مدرس لغة إنجليزية متخصص في المنهاج السعودي لجميع المراحل الدراسية (ابتدائي – متوسط – ثانوي)." data-en="Specialized English teacher for Saudi curriculum for all educational stages (Elementary – Middle – High School).">مدرس لغة إنجليزية متخصص في المنهاج السعودي لجميع المراحل الدراسية (ابتدائي – متوسط – ثانوي).</p>
+      <ul class="about-list">
+        <li data-ar="✅ شرح مبسط وواضح" data-en="✅ Simple & clear explanation">✅ شرح مبسط وواضح</li>
+        <li data-ar="✅ تأسيس وتقوية في اللغة الإنجليزية" data-en="✅ Foundation & strengthening in English">✅ تأسيس وتقوية في اللغة الإنجليزية</li>
+        <li data-ar="✅ متابعة الواجبات والاختبارات" data-en="✅ Homework & exam follow-up">✅ متابعة الواجبات والاختبارات</li>
+        <li data-ar="✅ تحسين مهارات المحادثة والكتابة" data-en="✅ Improve speaking & writing skills">✅ تحسين مهارات المحادثة والكتابة</li>
+        <li data-ar="✅ دروس فردية ومجموعات صغيرة" data-en="✅ Individual & small group classes">✅ Individual & small group classes</li>
+        <li data-ar="✅ متابعة مستمرة لتحقيق أفضل النتائج" data-en="✅ Continuous follow-up for best results">✅ Continuous follow-up for best results</li>
+      </ul>
+      <p class="about-goal" data-ar="هدفنا بناء أساس قوي في اللغة الإنجليزية وتحقيق التفوق الدراسي بثقة وتميز 🚀" data-en="Our goal: Build a strong foundation in English and achieve academic excellence with confidence & excellence 🚀">هدفنا بناء أساس قوي في اللغة الإنجليزية وتحقيق التفوق الدراسي بثقة وتميز 🚀</p>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer class="footer">
+    <div class="social">
+      <a href="https://www.instagram.com/cambridge_english_style?igsh=cjluMWt1OHVwdnJm" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="35">
+      </a>
+      <a href="https://www.facebook.com/61580635530969/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="35">
+      </a>
+      <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="35">
+      </a>
+    </div>
+    <p class="copy" data-ar="© 2026 Cambridge English Style - جميع الحقوق محفوظة" data-en="© 2026 Cambridge English Style - All Rights Reserved">© 2026 Cambridge English Style - All Rights Reserved</p>
+    <p class="sub" data-ar="مدرس لغة إنجليزية - المنهاج السعودي" data-en="English Teacher - Saudi Curriculum">مدرس لغة إنجليزية - المنهاج السعودي</p>
+  </footer>
+
+<script>
+function changeLang(lang) {
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+  document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+    el.innerText = el.getAttribute('data-' + lang);
+  });
+}
+
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+}
+
+window.onload = function() {
+  const savedTheme = localStorage.getItem('theme');
+  const savedLang = localStorage.getItem('lang');
+  if(savedTheme === 'dark') document.body.classList.add('dark');
+  if(savedLang) changeLang(savedLang);
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+});
+
+document.querySelectorAll('.card, .feature').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('.header');
+  if(window.scrollY > 50) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+});
+</script>
 </body>
 </html>
