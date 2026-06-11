@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-ar="مدرس لغة إنجليزية - المنهاج السعودي" data-en="English Teacher - Saudi Curriculum">مدرس لغة إنجليزية - المنهاج السعودي</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- الهيدر -->
   <header class="header">
     <div class="header-content">
       <div class="logo" data-ar="Cambridge English Style" data-en="Cambridge English Style">Cambridge English Style</div>
-      
+
       <div class="header-controls">
         <div class="dropdown">
           <button class="dropbtn" data-ar="⚙️ الإعدادات" data-en="⚙️ Settings">⚙️ الإعدادات</button>
@@ -21,7 +22,7 @@
             <a href="#" onclick="toggleTheme()">🌙 <span data-ar="الوضع الليلي" data-en="Dark Mode">الوضع الليلي</span></a>
           </div>
         </div>
-        
+
         <div class="social-top">
           <a href="https://www.instagram.com/cambridge_english_style?igsh=cjluMWt1OHVwdnJm" target="_blank" class="social-btn insta" data-ar="انستاجرام" data-en="Instagram">انستاجرام</a>
           <a href="https://www.facebook.com/61580635530969/" target="_blank" class="social-btn fb" data-ar="فيسبوك" data-en="Facebook">فيسبوك</a>
@@ -29,30 +30,40 @@
       </div>
     </div>
   </header>
-  <!-- معرض صور كامبردج -->
-<section style="padding: 40px 20px; max-width: 1000px; margin: auto;">
-  <h2 style="text-align: center; margin-bottom: 30px;">صور من كامبردج</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-    <img src="images/cam1.jpg" alt="كامبردج 1" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    <img src="images/cam2.jpg" alt="كامبردج 2" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-  </div>
-</section>
 
-  <!-- البانر - القسم الأول -->
+  <!-- شريط الثقة بالعداد الحقي -->
+  <section class="trust-bar">
+    <p>
+      ⭐ <b><span id="avg-rating">0.0</span></b> تقييم من الطلاب
+      <span>(<b><span id="student-count">0</span></b> تقييم)</span> | مدرس معتمد TESOL
+    </p>
+  </section>
+
+  <!-- وصف المعلم -->
+  <section class="teacher-desc">
+    <h2>تجد صعوبة في الإنجليزية؟</h2>
+    <p>
+      مع <strong>مستر ماهر - معتمد TESOL</strong>، حوّل ضعفك في القواعد والمحادثة إلى نقطة قوة.
+      دروس فردية ومجموعات مصغرة، مصممة خصيصاً للمنهاج السعودي.
+      ابدأ رحلة التفوق من اليوم، وكن ضمن <strong><span id="student-count-2">0</span> طالب حققوا أعلى الدرجات</strong>.
+    </p>
+  </section>
+
+  <!-- البانر -->
   <section class="banner">
     <h1 data-ar="👨‍🏫 مدرس لغة إنجليزية متخصص" data-en="👨‍🏫 Specialized English Teacher">👨‍🏫 مدرس لغة إنجليزية متخصص</h1>
     <p data-ar="تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية" data-en="Teaching Saudi curriculum for Elementary, Middle & High School">تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية</p>
     <p class="banner-note" data-ar="شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح" data-en="Simplified explanation & continuous follow-up to ensure excellence and success">شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح</p>
-    
+
     <div class="btn-group">
       <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn" data-ar="احجز حصتك الآن" data-en="Book Your Session Now">احجز حصتك الآن</a>
       <a href="#courses" class="btn-outline" data-ar="تواصل مع المدرس مباشرة" data-en="Contact Teacher Directly">تواصل مع المدرس مباشرة</a>
     </div>
-    
+
     <p class="banner-note" style="margin-top: 30px;" data-ar="📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي" data-en="📱 Inquire now and get an educational plan suited to your level">📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي</p>
   </section>
 
-  <!-- القسم الثاني - الدروس -->
+  <!-- الدروس -->
   <section class="section" id="courses">
     <h2 data-ar="📚 دروس خاصة وتقوية شاملة" data-en="📚 Private & Comprehensive Tutoring">📚 دروس خاصة وتقوية شاملة</h2>
     <div class="cards">
@@ -77,44 +88,6 @@
     </div>
   </section>
 
-  <!-- قسم إضافي - المتابعة -->
-  <section class="section features">
-    <h2 data-ar="🎯 متابعة ونتائج مميزة" data-en="🎯 Follow-up & Excellent Results">🎯 متابعة ونتائج مميزة</h2>
-    <div class="cards">
-      <div class="feature">
-        <div class="icon">📝</div>
-        <h3 data-ar="حل الواجبات" data-en="Homework Help">حل الواجبات</h3>
-        <p data-ar="حل الواجبات والتدريب على الاختبارات" data-en="Solving homework & training for exams">حل الواجبات والتدريب على الاختبارات</p>
-      </div>
-      <div class="feature">
-        <div class="icon">📊</div>
-        <h3 data-ar="متابعة مستمرة" data-en="Continuous Follow-up">متابعة مستمرة</h3>
-        <p data-ar="متابعة الطالب خطوة بخطوة" data-en="Following up with the student step by step">متابعة الطالب خطوة بخطوة</p>
-      </div>
-      <div class="feature">
-        <div class="icon">🚀</div>
-        <h3 data-ar="رفع المستوى" data-en="Level Up">رفع المستوى</h3>
-        <p data-ar="رفع مستوى الطالب بثقة وتميز" data-en="Raising student level with confidence & excellence">رفع مستوى الطالب بثقة وتميز</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- النبذة الاحترافية -->
-  <section class="section">
-    <div class="about-box">
-      <p class="about-intro" data-ar="مدرس لغة إنجليزية متخصص في المنهاج السعودي لجميع المراحل الدراسية (ابتدائي – متوسط – ثانوي)." data-en="Specialized English teacher for Saudi curriculum for all educational stages (Elementary – Middle – High School).">مدرس لغة إنجليزية متخصص في المنهاج السعودي لجميع المراحل الدراسية (ابتدائي – متوسط – ثانوي).</p>
-      <ul class="about-list">
-        <li data-ar="✅ شرح مبسط وواضح" data-en="✅ Simple & clear explanation">✅ شرح مبسط وواضح</li>
-        <li data-ar="✅ تأسيس وتقوية في اللغة الإنجليزية" data-en="✅ Foundation & strengthening in English">✅ تأسيس وتقوية في اللغة الإنجليزية</li>
-        <li data-ar="✅ متابعة الواجبات والاختبارات" data-en="✅ Homework & exam follow-up">✅ متابعة الواجبات والاختبارات</li>
-        <li data-ar="✅ تحسين مهارات المحادثة والكتابة" data-en="✅ Improve speaking & writing skills">✅ تحسين مهارات المحادثة والكتابة</li>
-        <li data-ar="✅ دروس فردية ومجموعات صغيرة" data-en="✅ Individual & small group classes">✅ دروس فردية ومجموعات صغيرة</li>
-        <li data-ar="✅ متابعة مستمرة لتحقيق أفضل النتائج" data-en="✅ Continuous follow-up for best results">✅ متابعة مستمرة لتحقيق أفضل النتائج</li>
-      </ul>
-      <p class="about-goal" data-ar="هدفنا بناء أساس قوي في اللغة الإنجليزية وتحقيق التفوق الدراسي بثقة وتميز 🚀" data-en="Our goal: Build a strong foundation in English and achieve academic excellence with confidence & excellence 🚀">هدفنا بناء أساس قوي في اللغة الإنجليزية وتحقيق التفوق الدراسي بثقة وتميز 🚀</p>
-    </div>
-  </section>
-
   <!-- الفوتر -->
   <footer class="footer">
     <div class="social">
@@ -133,10 +106,11 @@
   </footer>
 
 <script>
+// لغة + ثيم
 function changeLang(lang) {
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang;
-  document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.body.dir = lang === 'ar'? 'rtl' : 'ltr';
   document.querySelectorAll('[data-ar][data-en]').forEach(el => {
     el.innerText = el.getAttribute('data-' + lang);
   });
@@ -144,7 +118,29 @@ function changeLang(lang) {
 
 function toggleTheme() {
   document.body.classList.toggle('dark');
-  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+  localStorage.setItem('theme', document.body.classList.contains('dark')? 'dark' : 'light');
+}
+
+// دالة تفك CSV صح حتى لو فيه فواصل جوه النص
+function parseCSV(csv) {
+  const lines = csv.trim().split('\n');
+  return lines.map(line => {
+    const result = [];
+    let current = '';
+    let inQuotes = false;
+    for(let i=0; i<line.length; i++) {
+      const char = line[i];
+      if(char === '"') inQuotes =!inQuotes;
+      else if(char === ',' &&!inQuotes) {
+        result.push(current.trim());
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+    result.push(current.trim());
+    return result.map(v => v.replace(/^"|"$/g, ''));
+  });
 }
 
 window.onload = function() {
@@ -152,21 +148,35 @@ window.onload = function() {
   const savedLang = localStorage.getItem('lang');
   if(savedTheme === 'dark') document.body.classList.add('dark');
   if(savedLang) changeLang(savedLang);
-}
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('show');
+  const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSEWpNC7zAWhXmyuvT2VVbZ3tQcFb_EpplH3sI74RuC_s-J98geS4RvWJudqTA9j-by4ICFzuveozyL/pub?gid=688115288&single=true&output=csv';
+
+  fetch(SHEET_URL)
+.then(res => res.text())
+.then(csv => {
+    const data = parseCSV(csv);
+    const headers = data[0]; // سطر العناوين
+    const rows = data.slice(1).filter(r => r.length > 1 && r.some(c => c)); // نشيل الفاضي
+
+    // ندور على اسم العمود بدل الرقم
+    const ratingCol = headers.findIndex(h => h.includes('نجوم') || h.toLowerCase().includes('rating'));
+    const nameCol = headers.findIndex(h => h.includes('الاسم') || h.toLowerCase().includes('name'));
+    const commentCol = headers.findIndex(h => h.includes('رأيك') || h.includes('تعليق'));
+
+    const count = rows.filter(r => r[ratingCol] && Number(r[ratingCol]) > 0).length;
+    document.getElementById('student-count').innerText = count;
+    document.getElementById('student-count-2').innerText = count;
+
+    const ratings = rows.map(r => Number(r[ratingCol])).filter(n => n > 0);
+    const avg = ratings.length > 0? ratings.reduce((a,b) => a+b, 0) / ratings.length : 0;
+    document.getElementById('avg-rating').innerText = avg.toFixed(1);
+
+    console.log('✅ تم التحميل - عمود النجوم:', headers[ratingCol], 'العدد:', count, 'المتوسط:', avg.toFixed(1));
+  })
+.catch(err => {
+    console.log('❌ خطأ في جلب البيانات:', err);
   });
-});
-
-document.querySelectorAll('.card, .feature').forEach(el => observer.observe(el));
-
-window.addEventListener('scroll', function() {
-  const header = document.querySelector('.header');
-  if(window.scrollY > 50) header.classList.add('scrolled');
-  else header.classList.remove('scrolled');
-});
+}
 </script>
 </body>
 </html>
