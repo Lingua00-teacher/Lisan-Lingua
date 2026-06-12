@@ -1,89 +1,110 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" x-data="app()" :lang="lang" :dir="dir">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-ar="مدرس لغة إنجليزية - المنهاج السعودي" data-en="English Teacher - Saudi Curriculum">مدرس لغة إنجليزية - المنهاج السعودي</title>
+  <!-- Meta للظهور في واتساب + فيسبوك -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://a00-teacher.github.io/">
+<meta property="og:title" content="Cambridge English Style - مدرس إنجليزي معتمد ⭐5.0">
+<meta property="og:description" content="حوّل ضعفك في القواعد والمحادثة لنقطة قوة. دروس أونلاين للمنهاج السعودي مع مدرس معتمد TESOL">
+<meta property="og:image" content="https://i.imgur.com/8Qm1W9L.jpg">
+<meta property="og:locale" content="ar_SA">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cambridge English Style - مدرس إنجليزي">
+<meta name="twitter:description" content="دروس فردية ومجموعات للمنهاج السعودي. تقييمات طلاب حقيقية">
+<meta name="twitter:image" content="https://i.imgur.com/8Qm1W9L.jpg">
+  <title x-text="texts.title">مدرس لغة إنجليزية - المنهاج السعودي</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x/dist/cdn.min.js"></script>
+  
+  <style>
+    [x-cloak] { display: none !important; }
+    body.dark { background: #1a1a1a; color: #eee; }
+    body.dark .card, body.dark .header, body.dark .footer { background: #2a2a2a; }
+  </style>
 </head>
-<body>
+<body :class="theme">
   <!-- الهيدر -->
   <header class="header">
     <div class="header-content">
-      <div class="logo" data-ar="Cambridge English Style" data-en="Cambridge English Style">Cambridge English Style</div>
+      <div class="logo" x-text="texts.logo">Cambridge English Style</div>
 
-      <div class="header-controls">
+      <div class="header-controls" x-data="{open: false}">
         <div class="dropdown">
-          <button class="dropbtn" data-ar="⚙️ الإعدادات" data-en="⚙️ Settings">⚙️ الإعدادات</button>
-          <div class="dropdown-content">
-            <a href="#" onclick="changeLang('ar')">🇸🇦 <span data-ar="عربي" data-en="Arabic">عربي</span></a>
-            <a href="#" onclick="changeLang('en')">🇬🇧 <span data-ar="إنجليزي" data-en="English">إنجليزي</span></a>
-            <a href="#" onclick="toggleTheme()">🌙 <span data-ar="الوضع الليلي" data-en="Dark Mode">الوضع الليلي</span></a>
+          <button class="dropbtn" @click="open = !open" @click.away="open = false">⚙️ <span x-text="texts.settings">الإعدادات</span></button>
+          <div class="dropdown-content" x-show="open" x-transition x-cloak>
+            <a href="#" @click.prevent="changeLang('ar')">🇸🇦 <span x-text="texts.arabic">عربي</span></a>
+            <a href="#" @click.prevent="changeLang('en')">🇬🇧 <span x-text="texts.english">إنجليزي</span></a>
+            <a href="#" @click.prevent="toggleTheme()">🌙 <span x-text="texts.theme">الوضع الليلي</span></a>
           </div>
         </div>
 
         <div class="social-top">
-          <a href="https://www.instagram.com/cambridge_english_style?igsh=cjluMWt1OHVwdnJm" target="_blank" class="social-btn insta" data-ar="انستاجرام" data-en="Instagram">انستاجرام</a>
-          <a href="https://www.facebook.com/61580635530969/" target="_blank" class="social-btn fb" data-ar="فيسبوك" data-en="Facebook">فيسبوك</a>
+          <a href="https://www.instagram.com/cambridge_english_style?igsh=cjluMWt1OHVwdnJm" target="_blank" class="social-btn insta" x-text="texts.instagram">انستاجرام</a>
+          <a href="https://www.facebook.com/61580635530969/" target="_blank" class="social-btn fb" x-text="texts.facebook">فيسبوك</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- شريط الثقة بالعداد الحقي -->
+  <!-- شريط الثقة - تقييم الفيسبوك الثابت -->
   <section class="trust-bar">
     <p>
-      ⭐ <b><span id="avg-rating">0.0</span></b> تقييم من الطلاب
-      <span>(<b><span id="student-count">0</span></b> تقييم)</span> | مدرس معتمد TESOL
+      ⭐ <b>5.0</b> <span x-text="texts.rating">تقييم من الطلاب</span>
+      <span>(<b>1,144</b> <span x-text="texts.reviews">تقييم</span>)</span> | مدرس معتمد TESOL | 100% يوصون بالصفحة
     </p>
   </section>
 
   <!-- وصف المعلم -->
   <section class="teacher-desc">
-    <h2>تجد صعوبة في الإنجليزية؟</h2>
-    <p>
+    <h2 x-text="texts.problem">تجد صعوبة في الإنجليزية؟</h2>
+    <p x-html="texts.desc">
       مع <strong>مستر ماهر - معتمد TESOL</strong>، حوّل ضعفك في القواعد والمحادثة إلى نقطة قوة.
       دروس فردية ومجموعات مصغرة، مصممة خصيصاً للمنهاج السعودي.
-      ابدأ رحلة التفوق من اليوم، وكن ضمن <strong><span id="student-count-2">0</span> طالب حققوا أعلى الدرجات</strong>.
+      ابدأ رحلة التفوق من اليوم، وكن ضمن <strong>1,144 طالب حققوا أعلى الدرجات</strong>.
     </p>
   </section>
 
   <!-- البانر -->
   <section class="banner">
-    <h1 data-ar="👨‍🏫 مدرس لغة إنجليزية متخصص" data-en="👨‍🏫 Specialized English Teacher">👨‍🏫 مدرس لغة إنجليزية متخصص</h1>
-    <p data-ar="تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية" data-en="Teaching Saudi curriculum for Elementary, Middle & High School">تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية</p>
-    <p class="banner-note" data-ar="شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح" data-en="Simplified explanation & continuous follow-up to ensure excellence and success">شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح</p>
+    <h1 x-text="texts.bannerTitle">👨‍🏫 مدرس لغة إنجليزية متخصص</h1>
+    <p x-text="texts.bannerDesc">تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية</p>
+    <p class="banner-note" x-text="texts.bannerNote">شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح</p>
 
     <div class="btn-group">
-      <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn" data-ar="احجز حصتك الآن" data-en="Book Your Session Now">احجز حصتك الآن</a>
-      <a href="#courses" class="btn-outline" data-ar="تواصل مع المدرس مباشرة" data-en="Contact Teacher Directly">تواصل مع المدرس مباشرة</a>
+      <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn" x-text="texts.bookNow">احجز حصتك الآن</a>
+      <a href="#courses" class="btn-outline" x-text="texts.contact">تواصل مع المدرس مباشرة</a>
     </div>
 
-    <p class="banner-note" style="margin-top: 30px;" data-ar="📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي" data-en="📱 Inquire now and get an educational plan suited to your level">📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي</p>
+    <p class="banner-note" style="margin-top: 30px;" x-text="texts.inquire">📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي</p>
   </section>
 
   <!-- الدروس -->
   <section class="section" id="courses">
-    <h2 data-ar="📚 دروس خاصة وتقوية شاملة" data-en="📚 Private & Comprehensive Tutoring">📚 دروس خاصة وتقوية شاملة</h2>
+    <h2 x-text="texts.courses">📚 دروس خاصة وتقوية شاملة</h2>
     <div class="cards">
       <div class="card">
-        <h3 data-ar="القواعد" data-en="Grammar">القواعد</h3>
-        <p data-ar="تعليم القواعد والمحادثة والقراءة والكتابة والاستماع" data-en="Teaching grammar, speaking, reading, writing & listening">تعليم القواعد والمحادثة والقراءة والكتابة والاستماع</p>
-        <p class="price" data-ar="بأسلوب سهل يناسب جميع المستويات" data-en="In an easy style suitable for all levels">بأسلوب سهل يناسب جميع المستويات</p>
-        <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn-small" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
+        <h3 x-text="texts.grammar">القواعد</h3>
+        <p x-text="texts.grammarDesc">تعليم القواعد والمحادثة والقراءة والكتابة والاستماع</p>
+        <p class="price" x-text="texts.easy">بأسلوب سهل يناسب جميع المستويات</p>
+        <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn-small" x-text="texts.book">احجز الآن</a>
       </div>
       <div class="card">
-        <h3 data-ar="المراحل الدراسية" data-en="School Levels">المراحل الدراسية</h3>
-        <p data-ar="ابتدائي - متوسط - ثانوي" data-en="Elementary - Middle - High School">ابتدائي - متوسط - ثانوي</p>
-        <p class="price" data-ar="منهج سعودي معتمد" data-en="Approved Saudi curriculum">منهج سعودي معتمد</p>
-        <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn-small" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
+        <h3 x-text="texts.levels">المراحل الدراسية</h3>
+        <p x-text="texts.levelsDesc">ابتدائي - متوسط - ثانوي</p>
+        <p class="price" x-text="texts.curriculum">منهج سعودي معتمد</p>
+        <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn-small" x-text="texts.book">احجز الآن</a>
       </div>
       <div class="card">
-        <h3 data-ar="نوع الدروس" data-en="Class Type">نوع الدروس</h3>
-        <p data-ar="دروس فردية ومجموعات صغيرة" data-en="Individual & small group classes">دروس فردية ومجموعات صغيرة</p>
-        <p class="price" data-ar="أونلاين مباشر" data-en="Live Online">أونلاين مباشر</p>
-        <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn-small" data-ar="احجز الآن" data-en="Book Now">احجز الآن</a>
+        <h3 x-text="texts.type">نوع الدروس</h3>
+        <p x-text="texts.typeDesc">دروس فردية ومجموعات صغيرة</p>
+        <p class="price" x-text="texts.online">أونلاين مباشر</p>
+        <a href="https://chat.whatsapp.com/IDC0K8sDvgTCmwn8Pde9Bb" target="_blank" class="btn-small" x-text="texts.book">احجز الآن</a>
       </div>
     </div>
   </section>
@@ -101,81 +122,99 @@
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="35">
       </a>
     </div>
-    <p class="copy" data-ar="© 2026 Cambridge English Style - جميع الحقوق محفوظة" data-en="© 2026 Cambridge English Style - All Rights Reserved">© 2026 Cambridge English Style - All Rights Reserved</p>
-    <p class="sub" data-ar="مدرس لغة إنجليزية - المنهاج السعودي" data-en="English Teacher - Saudi Curriculum">مدرس لغة إنجليزية - المنهاج السعودي</p>
+    <p class="copy" x-text="texts.copy">© 2026 Cambridge English Style - جميع الحقوق محفوظة</p>
+    <p class="sub" x-text="texts.sub">مدرس لغة إنجليزية - المنهاج السعودي</p>
   </footer>
 
 <script>
-// لغة + ثيم
-function changeLang(lang) {
-  localStorage.setItem('lang', lang);
-  document.documentElement.lang = lang;
-  document.body.dir = lang === 'ar'? 'rtl' : 'ltr';
-  document.querySelectorAll('[data-ar][data-en]').forEach(el => {
-    el.innerText = el.getAttribute('data-' + lang);
-  });
-}
-
-function toggleTheme() {
-  document.body.classList.toggle('dark');
-  localStorage.setItem('theme', document.body.classList.contains('dark')? 'dark' : 'light');
-}
-
-// دالة تفك CSV صح حتى لو فيه فواصل جوه النص
-function parseCSV(csv) {
-  const lines = csv.trim().split('\n');
-  return lines.map(line => {
-    const result = [];
-    let current = '';
-    let inQuotes = false;
-    for(let i=0; i<line.length; i++) {
-      const char = line[i];
-      if(char === '"') inQuotes =!inQuotes;
-      else if(char === ',' &&!inQuotes) {
-        result.push(current.trim());
-        current = '';
-      } else {
-        current += char;
+function app() {
+  return {
+    lang: localStorage.getItem('lang') || 'ar',
+    theme: localStorage.getItem('theme') || '',
+    
+    get dir() {
+      return this.lang === 'ar' ? 'rtl' : 'ltr';
+    },
+    
+    texts: {
+      ar: {
+        title: 'مدرس لغة إنجليزية - المنهاج السعودي',
+        logo: 'Cambridge English Style',
+        settings: 'الإعدادات',
+        arabic: 'عربي',
+        english: 'إنجليزي',
+        theme: 'الوضع الليلي',
+        instagram: 'انستاجرام',
+        facebook: 'فيسبوك',
+        rating: 'تقييم من الطلاب',
+        reviews: 'تقييم',
+        problem: 'تجد صعوبة في الإنجليزية؟',
+        desc: 'مع <strong>مستر ماهر - معتمد TESOL</strong>، حوّل ضعفك في القواعد والمحادثة إلى نقطة قوة. دروس فردية ومجموعات مصغرة، مصممة خصيصاً للمنهاج السعودي. ابدأ رحلة التفوق من اليوم، وكن ضمن <strong>1,144 طالب حققوا أعلى الدرجات</strong>.',
+        bannerTitle: '👨‍🏫 مدرس لغة إنجليزية متخصص',
+        bannerDesc: 'تدريس المنهاج السعودي للمرحلة الابتدائية والمتوسطة والثانوية',
+        bannerNote: 'شرح مبسط ومتابعة مستمرة لضمان التفوق والنجاح',
+        bookNow: 'احجز حصتك الآن',
+        contact: 'تواصل مع المدرس مباشرة',
+        inquire: '📱 استفسر الآن واحصل على خطة تعليمية تناسب مستواك الدراسي',
+        courses: '📚 دروس خاصة وتقوية شاملة',
+        grammar: 'القواعد',
+        grammarDesc: 'تعليم القواعد والمحادثة والقراءة والكتابة والاستماع',
+        easy: 'بأسلوب سهل يناسب جميع المستويات',
+        book: 'احجز الآن',
+        levels: 'المراحل الدراسية',
+        levelsDesc: 'ابتدائي - متوسط - ثانوي',
+        curriculum: 'منهج سعودي معتمد',
+        type: 'نوع الدروس',
+        typeDesc: 'دروس فردية ومجموعات صغيرة',
+        online: 'أونلاين مباشر',
+        copy: '© 2026 Cambridge English Style - جميع الحقوق محفوظة',
+        sub: 'مدرس لغة إنجليزية - المنهاج السعودي'
+      },
+      en: {
+        title: 'English Teacher - Saudi Curriculum',
+        logo: 'Cambridge English Style',
+        settings: 'Settings',
+        arabic: 'Arabic',
+        english: 'English',
+        theme: 'Dark Mode',
+        instagram: 'Instagram',
+        facebook: 'Facebook',
+        rating: 'rating from students',
+        reviews: 'reviews',
+        problem: 'Struggling with English?',
+        desc: 'With <strong>Mr. Maher - TESOL Certified</strong>, turn your weakness in grammar and conversation into a strength. Individual and small group lessons, designed specifically for the Saudi curriculum. Start your journey to excellence today, and join <strong>1,144 students who achieved top grades</strong>.',
+        bannerTitle: '👨‍🏫 Specialized English Teacher',
+        bannerDesc: 'Teaching Saudi curriculum for Elementary, Middle & High School',
+        bannerNote: 'Simplified explanation & continuous follow-up to ensure excellence and success',
+        bookNow: 'Book Your Session Now',
+        contact: 'Contact Teacher Directly',
+        inquire: '📱 Inquire now and get an educational plan suited to your level',
+        courses: '📚 Private & Comprehensive Tutoring',
+        grammar: 'Grammar',
+        grammarDesc: 'Teaching grammar, speaking, reading, writing & listening',
+        easy: 'In an easy style suitable for all levels',
+        book: 'Book Now',
+        levels: 'School Levels',
+        levelsDesc: 'Elementary - Middle - High School',
+        curriculum: 'Approved Saudi curriculum',
+        type: 'Class Type',
+        typeDesc: 'Individual & small group classes',
+        online: 'Live Online',
+        copy: '© 2026 Cambridge English Style - All Rights Reserved',
+        sub: 'English Teacher - Saudi Curriculum'
       }
+    },
+    
+    changeLang(lang) {
+      this.lang = lang;
+      localStorage.setItem('lang', lang);
+    },
+    
+    toggleTheme() {
+      this.theme = this.theme === 'dark' ? '' : 'dark';
+      localStorage.setItem('theme', this.theme);
     }
-    result.push(current.trim());
-    return result.map(v => v.replace(/^"|"$/g, ''));
-  });
-}
-
-window.onload = function() {
-  const savedTheme = localStorage.getItem('theme');
-  const savedLang = localStorage.getItem('lang');
-  if(savedTheme === 'dark') document.body.classList.add('dark');
-  if(savedLang) changeLang(savedLang);
-
-  const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSEWpNC7zAWhXmyuvT2VVbZ3tQcFb_EpplH3sI74RuC_s-J98geS4RvWJudqTA9j-by4ICFzuveozyL/pub?gid=688115288&single=true&output=csv';
-
-  fetch(SHEET_URL)
-.then(res => res.text())
-.then(csv => {
-    const data = parseCSV(csv);
-    const headers = data[0]; // سطر العناوين
-    const rows = data.slice(1).filter(r => r.length > 1 && r.some(c => c)); // نشيل الفاضي
-
-    // ندور على اسم العمود بدل الرقم
-    const ratingCol = headers.findIndex(h => h.includes('نجوم') || h.toLowerCase().includes('rating'));
-    const nameCol = headers.findIndex(h => h.includes('الاسم') || h.toLowerCase().includes('name'));
-    const commentCol = headers.findIndex(h => h.includes('رأيك') || h.includes('تعليق'));
-
-    const count = rows.filter(r => r[ratingCol] && Number(r[ratingCol]) > 0).length;
-    document.getElementById('student-count').innerText = count;
-    document.getElementById('student-count-2').innerText = count;
-
-    const ratings = rows.map(r => Number(r[ratingCol])).filter(n => n > 0);
-    const avg = ratings.length > 0? ratings.reduce((a,b) => a+b, 0) / ratings.length : 0;
-    document.getElementById('avg-rating').innerText = avg.toFixed(1);
-
-    console.log('✅ تم التحميل - عمود النجوم:', headers[ratingCol], 'العدد:', count, 'المتوسط:', avg.toFixed(1));
-  })
-.catch(err => {
-    console.log('❌ خطأ في جلب البيانات:', err);
-  });
+  }
 }
 </script>
 </body>
