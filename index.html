@@ -43,11 +43,11 @@
     </div>
   </header>
 
-  <!-- شريط الثقة بالعداد الحقي -->
+  <!-- شريط الثقة - تقييم الفيسبوك الثابت -->
   <section class="trust-bar">
     <p>
-      ⭐ <b><span id="avg-rating">0.0</span></b> تقييم من الطلاب
-      <span>(<b><span id="student-count">0</span></b> تقييم)</span> | مدرس معتمد TESOL
+      ⭐ <b>5.0</b> تقييم من الطلاب
+      <span>(<b>1,144</b> تقييم)</span> | مدرس معتمد TESOL | 100% يوصون بالصفحة
     </p>
   </section>
 
@@ -57,7 +57,7 @@
     <p>
       مع <strong>مستر ماهر - معتمد TESOL</strong>، حوّل ضعفك في القواعد والمحادثة إلى نقطة قوة.
       دروس فردية ومجموعات مصغرة، مصممة خصيصاً للمنهاج السعودي.
-      ابدأ رحلة التفوق من اليوم، وكن ضمن <strong><span id="student-count-2">0</span> طالب حققوا أعلى الدرجات</strong>.
+      ابدأ رحلة التفوق من اليوم، وكن ضمن <strong>1,144 طالب حققوا أعلى الدرجات</strong>.
     </p>
   </section>
 
@@ -77,7 +77,7 @@
 
   <!-- الدروس -->
   <section class="section" id="courses">
-    <h2 data-ar="📚 دروس خاصة وتقوية شاملة" data-en="📚 Private & Comprehensive Tutoring">📚 دروس خاصة وتقوية شاملة</h2>
+    <h2 data-ar="📚 دروس خاصة وتقوية شاملة" data-en="📚 Private & Comprehensive Tutoring">📚 Private & Comprehensive Tutoring</h2>
     <div class="cards">
       <div class="card">
         <h3 data-ar="القواعد" data-en="Grammar">القواعد</h3>
@@ -133,61 +133,11 @@ function toggleTheme() {
   localStorage.setItem('theme', document.body.classList.contains('dark')? 'dark' : 'light');
 }
 
-// دالة تفك CSV صح حتى لو فيه فواصل جوه النص
-function parseCSV(csv) {
-  const lines = csv.trim().split('\n');
-  return lines.map(line => {
-    const result = [];
-    let current = '';
-    let inQuotes = false;
-    for(let i=0; i<line.length; i++) {
-      const char = line[i];
-      if(char === '"') inQuotes =!inQuotes;
-      else if(char === ',' &&!inQuotes) {
-        result.push(current.trim());
-        current = '';
-      } else {
-        current += char;
-      }
-    }
-    result.push(current.trim());
-    return result.map(v => v.replace(/^"|"$/g, ''));
-  });
-}
-
 window.onload = function() {
   const savedTheme = localStorage.getItem('theme');
   const savedLang = localStorage.getItem('lang');
   if(savedTheme === 'dark') document.body.classList.add('dark');
   if(savedLang) changeLang(savedLang);
-
-  const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSEWpNC7zAWhXmyuvT2VVbZ3tQcFb_EpplH3sI74RuC_s-J98geS4RvWJudqTA9j-by4ICFzuveozyL/pub?gid=688115288&single=true&output=csv';
-
-  fetch(SHEET_URL)
-.then(res => res.text())
-.then(csv => {
-    const data = parseCSV(csv);
-    const headers = data[0]; // سطر العناوين
-    const rows = data.slice(1).filter(r => r.length > 1 && r.some(c => c)); // نشيل الفاضي
-
-    // ندور على اسم العمود بدل الرقم
-    const ratingCol = headers.findIndex(h => h.includes('نجوم') || h.toLowerCase().includes('rating'));
-    const nameCol = headers.findIndex(h => h.includes('الاسم') || h.toLowerCase().includes('name'));
-    const commentCol = headers.findIndex(h => h.includes('رأيك') || h.includes('تعليق'));
-
-    const count = rows.filter(r => r[ratingCol] && Number(r[ratingCol]) > 0).length;
-    document.getElementById('student-count').innerText = count;
-    document.getElementById('student-count-2').innerText = count;
-
-    const ratings = rows.map(r => Number(r[ratingCol])).filter(n => n > 0);
-    const avg = ratings.length > 0? ratings.reduce((a,b) => a+b, 0) / ratings.length : 0;
-    document.getElementById('avg-rating').innerText = avg.toFixed(1);
-
-    console.log('✅ تم التحميل - عمود النجوم:', headers[ratingCol], 'العدد:', count, 'المتوسط:', avg.toFixed(1));
-  })
-.catch(err => {
-    console.log('❌ خطأ في جلب البيانات:', err);
-  });
 }
 </script>
 </body>
