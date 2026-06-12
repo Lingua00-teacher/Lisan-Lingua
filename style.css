@@ -12,13 +12,12 @@ html {
 }
 
 body {
+body {
   font-family: 'Tajawal', sans-serif;
   font-size: 17px;
   line-height: 1.8;
   color: #1a2b4c;
-  /* خلفية كامبردج شفافية 0.82 */
-  background: url('images/cam1.jpg') center/cover fixed, 
-              url('images/cam2.jpg') center/cover fixed;
+  background: #f8fafc; /* شيلت الصور مؤقتاً */
   position: relative;
   min-height: 100vh;
 }
